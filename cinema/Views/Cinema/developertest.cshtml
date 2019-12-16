@@ -1,0 +1,51 @@
+﻿
+@{ Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .test {
+            font-size: 20px;
+            color: black;
+        }
+
+        .bb {
+            margin-left:49%;
+            
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <select class="bb" id="a" onchange="myFunction()" >
+        <option value="This is 1.">This is 1.</option>
+        <option value="This is 2.">This is 2.</option>
+        <option value="This is 3.">This is 3.</option>
+        <option value="This is 4.">This is 4.</option>
+        <option value="This is 5.">This is 5.</option>
+
+    </select>
+    <br>
+
+
+
+
+
+</body>
+</html>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript">
+    function myFunction() {
+        a = document.getElementById('a').value;
+        alert(a);
+        $("#a option").removeClass('test');
+        $("#a option:selected").addClass('test');
+
+    }
+</script>

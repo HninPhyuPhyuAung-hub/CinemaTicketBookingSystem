@@ -1,0 +1,168 @@
+﻿@model cinema.Models.moviedetail
+
+@{
+    ViewBag.Title = "Addmoive";
+}
+
+
+
+@using (Html.BeginForm("Addmoive", "Cinema", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(Model=>Model.movieid)
+   
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <h2>Add Moive</h2>
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-md-2"><label>Movie Name</label></div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.moviename, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.moviename, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2"><label>Movie Description</label></div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.moviedescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.moviedescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2"><label>Movie Type</label></div>
+                <div class="col-md-10">
+                    @{ var movieaction = new List<SelectListItem>
+                      () {
+                                                   new SelectListItem{Value="Horror", Text="Horror"},
+                                                   new SelectListItem{Value="Adventure", Text="Adventure" },
+                                                   new SelectListItem{Value="Crime", Text="Crime" },
+                                                   new SelectListItem{Value="Horror", Text="Comedy"},
+                                                   new SelectListItem{Value="Adventure", Text="Action" },
+                                                   new SelectListItem{Value="Crime", Text="Drama" },
+                                                   new SelectListItem{Value="Horror", Text="Fantasy"},
+                                                   new SelectListItem{Value="Adventure", Text="Historical" },
+                                                   new SelectListItem{Value="Crime", Text="Magical realism" },
+                                                   new SelectListItem{Value="Crime", Text="Drama" },
+                                                   new SelectListItem{Value="Horror", Text="Mystery"},
+                                                   new SelectListItem{Value="Adventure", Text="Paranoid fiction" },
+                                                   new SelectListItem{Value="Crime", Text="Philosophical" },
+                                                   new SelectListItem{Value="Horror", Text="Romance"},
+                                                   new SelectListItem{Value="Adventure", Text="Science fiction" },
+                                                   new SelectListItem{Value="Crime", Text="Political" }
+                                                   };
+                    }
+                    @Html.DropDownListFor(model => model.movietype, movieaction, new { @class = "form-control", name = "select", id = "movieaction" })
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2"><label>Movie Actor</label></div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.actor, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.actor, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2"><label>Movie Time</label></div>
+                <div class="col-md-10">
+                    <input type="time" name="movietime" class="form-control datepicker" placeholder="Choose Hour" id="movietime" value="" onchange="get_date(this.value);">
+                </div>
+            </div>
+            <div class="form-group">
+
+                <div class="col-md-2"><label>Movie Director</label></div>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.director, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.director, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-2"><label>Movie Photo</label></div>
+
+                <div class="col-md-10">
+
+
+                    <p>  <img id="image" height="120px" width="150px" style="border-radius:70%;width:35%" src="~/Image/photo_placeholder.png" /></p>
+
+                    <p> <input type="file" name="image" accept="image/*" onchange="preview_image(event)" /></p>
+                </div>
+                @Html.HiddenFor(a => a.moviephotho, new { id = "hphoto" })
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-2"><label>Movie Trailer</label></div>
+                <div class="col-md-10">
+
+                    <p> <input type="file" name="movie" accept="video/*" /></p>
+                </div>
+                @Html.HiddenFor(a => a.trailer, new { id = "htralier" })
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-2"><label>2D or 3D?</label></div>
+                <div class="col-md-10">
+                    @{ var movietype = new List<SelectListItem>
+                    () {
+                                                    new SelectListItem{Value="2D", Text="2D"},
+                                                    new SelectListItem{Value="3D", Text="3D" },
+                                                    new SelectListItem{Value="4D", Text="4D" }
+                                                    };
+                    }
+                    @Html.DropDownListFor(model => model.movie2D, movietype, new { @class = "form-control", name = "select", id = "movietype" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2"><label>Rating</label></div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" name="rating" id="rating" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2"><label>Showing Event</label></div>
+                <div class="col-md-10">
+                    @{ var showevent = new List<SelectListItem>
+                    () {
+                                                    new SelectListItem{Value="NowShowing", Text="Now Showing"},
+                                                    new SelectListItem{Value="ComingSoon", Text="Comming Soon" },
+                                                    new SelectListItem{Value="Previous", Text="Previous Showing" }
+                                                    };
+                    }
+                    @Html.DropDownListFor(model => model.showingevent, showevent, new { @class = "form-control", name = "select", id = "showevent" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" style="background-color:red" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script type="text/javascript">
+        function preview_image(event) {
+            document.getElementById('image').style.display = "block";
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('image');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+}

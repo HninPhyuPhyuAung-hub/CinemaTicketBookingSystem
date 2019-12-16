@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html>
+
+<head>
+
+
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Movie Seat Selection a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+    <link href="~/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <!-- //fonts -->
+</head>
+
+
+<div class="custom-card">
+    <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="page-title-box page-title-box-sm">
+                    <h3 class="page-title"><i class=""></i>Choose Theartre</h3>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+    </div>
+</div>
+
+<div class="custom-card">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+
+            <!-- compose new email button -->
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+
+                            @{
+                                var theartre = new List<SelectListItem>()
+                                {
+
+                                };
+                            }
+
+                            <select name="theartre" class="form-control selectboxit" id="theartre" value="theartre" onchange="ShowSeat()"></select>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <br />
+
+            </div>
+
+
+
+            <!-- message user inbox list -->
+
+        </div>
+    </div>
+</div>
+@model IList<cinema.Models.Theatredetail>
+<div class="message custom-card" style="visibility:hidden">
+
+
+    @*<body onload="onLoaderFunc()">*@
+
+    <h1 style="padding-right:35px">Movie Seat Selection</h1>
+    <div class="container">
+
+        <div class="w3ls-reg">
+
+
+            <ul class="seat_w3ls">
+                <li class="smallBox greenBox">Selected Seat</li>
+
+
+
+                <li class="smallBox emptyBox">Empty Seat</li>
+            </ul>
+
+            <div class="seatStructure txt-center" style="overflow-x:auto;">
+                <table id="seatsBlock">
+                    <p id="notification"></p>
+                    <tr>
+                        <td></td>
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            <td>@i</td>
+
+
+                        }
+
+
+                        @for (int i = 11; i <= 20; i++)
+                        {
+                            <td>@i</td>
+                        }
+                    </tr>
+
+
+                    @for (int i = 0; i < 6; i++)
+                    {
+                        <tr>
+                            @if (i == 0)
+                            {
+                                <td>
+                                    A
+                                </td>
+                            }
+                            else if (i == 1)
+                            {
+                                <td>
+                                    B
+                                </td>
+                            }
+                            else if (i == 2)
+                            {
+                                <td>
+                                    C
+                                </td>
+                            }
+                            else if (i == 3)
+                            {
+                                <td>
+                                    D
+                                </td>
+                            }
+                            else if (i == 4)
+                            {
+                                <td>
+                                    E
+                                </td>
+                            }
+                            else if (i == 5)
+                            {
+                                <td>
+                                    F
+                                </td>
+                            }
+                            @for (int j = i * 20; j < (i * 20) + 20; j++)
+                            {
+
+                                <td>
+
+                                    <input type="checkbox" class="seats" value="@Model[j].seatname" onclick="updateArea()">
+                                    <input type="hidden" value="@Model[j].theatreid" id="Theatreid" />
+                                </td>
+
+                            }
+                        </tr>
+                    }
+
+                </table>
+                <br />
+                <<br />
+
+                <button style="margin:8px;" onclick="updateTextArea()">Update Selection</button>
+
+            </div>
+            <!-- //seat layout -->
+            <!-- details after booking displayed here -->
+            <div class="displayerBoxes txt-center" style="overflow-x:auto;">
+                <table class="Displaytable w3ls-table" width="100%">
+                    <tr>
+                        <th>Theartre Name</th>
+                        <th>Number of Seats</th>
+                        <th>Seats</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id="nameDisplay"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="NumberDisplay"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="seatsDisplay"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- //details after booking displayed here -->
+        </div>
+    </div>
+    @*</body>*@
+</div>
+<div id="UpdateSeat" class="modal fade">
+
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalHeaderSample">Update Seat Price</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <br />
+
+            <div class="modal-body" id="modalBodySample">
+                @using (Html.BeginForm("UpdateSeatPrice", "Cinema", FormMethod.Post, new { @id = "SOFORM" }))
+                {
+                    @Html.AntiForgeryToken()
+
+
+                    <div class="form-group">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" id="seatprice" name="seatprice" placeholder="Enter Seat Price">
+                            </div>
+
+                        </div>
+                        <input type="hidden" name="seatname" value="0" id="seatname" />
+                        <input type="hidden" name="theatrename" value="0" id="tname" />
+                    </div>
+
+
+                    <div class=" form-group text-center">
+                        <button class="btn btn-primary mt-2 w-50" style="" type="submit">Submit</button>
+                    </div>
+                    <input type="hidden" name="theatreid" value="0" id="theatreid" />
+
+
+
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+
+
+
+    @*  <script src="~/Scripts/moment.min.js"></script>*@
+  
+    <script src="~/default/assets/js/core/libraries/bootstrap.min.js"></script>
+ 
+
+
+    <!-- //js -->
+    <!-- script for seat selection -->
+    <script type="text/javascript">
+
+        var theatrename;
+        var SeatsVals = [];
+         $(function () {
+            UpdateTheartre();
+        });
+        function UpdateTheartre() {
+
+        $.ajax({
+
+                cache: false,
+                 url: '@Url.Action("getTheartre", "Cinema")',
+
+                beforeSend: function () {
+                    document.getElementsByClassName('message')[0].style.visibility = 'hidden';
+                },
+            success: function (result) {
+
+                  if (result != null) {
+                        $("#theartre").empty();
+                        $("#theartre").append($('<option value=""> -- Choose -- </option>'));
+                        for (i = 0; i < result.length; i++) {
+                            $('#theartre').append($('<option value="' + result[i].Value + '">' + result[i].Value + '</option>>'));
+                        }
+                    }
+
+
+                },
+
+                complete: function () {
+
+
+
+                }
+            });
+        }
+
+
+        function ShowSeat() {
+            theatrename = $('#theartre').val();
+            //alert(theatrename);
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("EditTheartre", "Cinema")',
+                data: { theatrename: theatrename},
+                beforeSend: function () {
+
+                },
+                success: function (result) {
+
+                },
+                complete: function () {
+                document.getElementsByClassName('message')[0].style.visibility = 'visible';
+                },
+            });
+
+        }
+
+
+
+
+        function updateArea() {
+
+
+            var id = $('#Theatreid').val();
+
+            if ($("input:checked").length != 0) {
+
+                var allNumberVals = [];
+                var allSeatsVals = [];
+                //Storing in Array
+
+                allNumberVals.push($("input:checked").length);
+                $('#seatsBlock :checked').each(function () {
+                    allSeatsVals.push($(this).val());
+                });
+
+                //Displaying
+                $('#nameDisplay').val(theatrename);
+                $('#NumberDisplay').val(allNumberVals);
+                $('#seatsDisplay').val(allSeatsVals);
+            }
+            else {
+
+                //Displaying
+                $('#nameDisplay').val(theatrename);
+                $('#NumberDisplay').val(0);
+                $('#seatsDisplay').val('None');
+            }
+        }
+
+
+        function updateTextArea() {
+
+            theatrename = $('#theartre').val();
+
+            if ($("input:checked").length != 0) {
+                $('#UpdateSeat').modal('show');
+                //$(".seatStructure *").prop("disabled", true);
+
+                $('#seatsBlock :checked').each(function () {
+                    SeatsVals.push($(this).val());
+                });
+                   //alert(SeatsVals)
+                   $('#seatname').val(SeatsVals);
+                $('#tname').val(theatrename);
+                  //alert("@ViewBag.Message")
+
+               } else {
+                   $('#UpdateSeat').modal('hide');
+                alert("Please Select Seats To Update!")
+            }
+        }
+
+
+    </script>
+}
+<!-- //script for seat selection -->

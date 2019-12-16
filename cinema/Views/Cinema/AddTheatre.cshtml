@@ -1,0 +1,311 @@
+﻿<div class="content-wrapper">
+    <div class="content">
+        <div class="row">
+            <div class="col-md-offset-0">
+
+                <span class="v-bottom" style="font-size:18px;font-weight:500;color:#428af5; padding-right:1050px;">
+                    <h1>Seat List</h1>
+                </span>
+
+
+                <button id="addseat" type="button" class="btn btn-primary btn-sm btn-rounded btnmain" style="background-color:#0000ff;border-color:#47d147;border-color:black" onclick="InsertAward()" title="Add New"><i class="fa fa-plus"></i> Add New Theatre</button>
+
+
+            </div>
+        </div>
+        <br />
+        <div class="container-fluid">
+            <table id="theartre" class="table table-bordered table-striped table-hover" width="100%">
+                <thead>
+
+                    <tr>
+
+                        <th>Thearter Name</th>
+                        <th>Seat Name</th>
+                        <th>Total</th>
+                        <th>Seat Price</th>
+                        <th></th>
+
+
+
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <div class="modal fade slide-down" id="DeleteAwardModel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="v-cell">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title">Confirm</h4>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure want to delete?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary" onclick="DelAward()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="awardMD">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalHeaderSample">Add Theatre</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                </div>
+                <br />
+
+
+                <div class="modal-body" id="modalBodySample">
+                    @using (Html.BeginForm("AddSeat", "Cinema", FormMethod.Post, new { @id = "SOFORM" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+
+                            <div class="form-group">
+                                <div class="row">  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><label for="name">Theatre Name</label></div></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" id="therartname" name="therartname" required="" placeholder="Enter Theatre Name">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row">
+
+                            <div class="form-group">
+                                <div class="row">  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><label for="name">Gold</label></div></div>
+                                <div class="row">
+                                    <div class="col-md-6 offset-1">
+                                        <input type="number" class="form-control" id="gold" name="gold" required="" placeholder="60 Total Seat" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="goldprice" name="goldprice" required="" placeholder="Enter Seat Price">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="row">  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><label for="name">Platinum</label></div></div>
+                                <div class="row">
+                                    <div class="col-md-6 offset-1">
+                                        <input type="number" class="form-control" id="plat" name="plat" required="" placeholder="60 Total Seat" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="platprice" name="platprice" required="" placeholder="Enter Seat Price">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div class="row">  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"><label for="name">Silver</label></div></div>
+                                <div class="row">
+                                    <div class="col-md-6 offset-1">
+                                        <input type="number" class="form-control" id="silver" name="silver" required="" placeholder="60 Total Seat" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="number" class="form-control" id="silverprice" name="silverprice" required="" placeholder="Enter Seat Price">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class=" form-group text-center">
+                            <button class="btn btn-primary mt-2 w-50" style="" type="submit">Submit</button>
+                        </div>
+                        <input type="hidden" name="theatreid" value="0" id="theatreid" />
+
+
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @section scripts{
+
+
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
+
+        <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+        <script type="text/javascript">
+
+                    var ID;
+                    var role = "@ViewBag.memberRole";
+        $(function () {
+           theatrelist();
+        });
+
+
+                    function theatrelist() {
+                        var SetData = $("#theartre tbody").empty();
+
+                        if ($.fn.dataTable.isDataTable('#theartre')) {
+
+                            $('#theartre').DataTable().clear().destroy();
+
+                        }
+
+                        $('#theartre').DataTable({
+
+                    "ajax": {
+                        "url": "/Cinema/TheartreList",
+                        "type": "GET",
+                        "datatype": "json"
+                    },
+                    "columns": [
+
+                        { "data": "therartname" },
+                        { "data": "seatname" },
+                        { "data": "total" },
+                        {"data":"price"},
+
+                        { className: "hide", data: 'theatreid' }
+
+                    ]
+
+                });
+
+
+        }
+        function EditAward(Id) {
+          //alert(Id);
+          //  alert(awardname);
+          //  alert(gift);
+          //  alert(amount);
+          //  alert(awardemployee);
+
+            date = moment(date).format("YYYY-MM-DD");
+          //  alert(date);
+          //  alert(EmpId);
+
+            $('#awardname').val(awardname);
+            $('#awardid').val(Id);
+            $('#gift').val(gift);
+
+
+            $('#amount').val(amount);
+            $('#date').val(date);
+
+           $.ajax({
+                cache: false,
+                url: '@Url.Action("getEmployee", "HumanResource")',
+
+                beforeSend: function () {
+                    $('#awardMD').modal('hide');
+                },
+                success: function (result) {
+
+                    if (result != null) {
+                        $("#state").empty();
+                        $("#state").append($('<option value=""> -- Choose -- </option>'));
+                        for (i = 0; i < result.length; i++) {
+                            $('#state').append($('<option value="' + result[i].Value + '">' + result[i].Value + '</option>>'));
+                        }
+                    }
+                    $('#state').val(awardemployee);
+                  //  console.log(result);
+                    //$('#state').val($('.statehidden').val());
+
+                },
+
+                complete: function () {
+
+
+
+                    $('#awardMD').modal('show');
+                }
+            });
+        }
+
+
+
+                    function InsertAward() {
+                        $('#awardname').val(null);
+                        $('#awardid').val(null);
+                        $('#gift').val(null);
+
+
+                        $('#amount').val(null);
+                        $('#date').val(null);
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("getEmployee", "HumanResource")',
+
+                beforeSend: function () {
+                    $('#awardMD').modal('hide');
+                },
+                success: function (result) {
+
+                    if (result != null) {
+                        $("#state").empty();
+                        $("#state").append($('<option value=""> -- Choose -- </option>'));
+                        for (i = 0; i < result.length; i++) {
+                            $('#state').append($('<option value="' + result[i].Value + '">' + result[i].Value + '</option>>'));
+                        }
+                    }
+                    //console.log(result);
+                    $('#state').val($('.statehidden').val());
+
+                },
+
+                complete: function () {
+
+
+
+                    $('#awardMD').modal('show');
+                }
+            });
+        }
+
+        function DeleteAward(Id) {
+            ID = Id;
+            $('#DeleteAwardModel').modal('show');
+        }
+
+
+        function DelAward() {
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("DeleteAward", "HumanResource")',
+                data: { ID: ID },
+                beforeSend: function () {
+                    $('#DeleteAwardModel').modal('hide');
+                },
+                success: function (myData) {
+
+
+                },
+
+                complete: function () {
+                    awardlist();
+                }
+            });
+        }
+        </script>
+    }

@@ -1,0 +1,784 @@
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title> &nbsp; Cinema Ticket Booking  </title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Home</title>
+    <!-- Favicon -->
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link href="~/assets/vendor/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="~/assets/css/front.css">
+    <link rel="stylesheet" href="~/assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="~/assets/vendor/hs-bg-video/hs-bg-video.css">
+    <link href="~/assets/css/custom-front.css" rel="stylesheet" />
+    <link href="~/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet" />
+
+
+    <link href="~/Videojs/video-js.css" rel="stylesheet" />
+</head>
+<body>
+    <link href="~/assets/css/custom-front.css" rel="stylesheet" />
+
+    <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md u-header--untransitioned" data-header-fix-moment="500" data-header-fix-effect="slide">
+
+
+        <div style="background-color:#000000">
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar hs-menu-initialized hs-menu-horizontal">
+                    <button type="button" class="navbar-toggler btn u-hamburger collapsed" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                        <span id="hamburgerTrigger" class="u-hamburger__box">
+                            <span class="u-hamburger__inner1" style="color:white;"></span>
+                        </span>
+                    </button>
+                    <div id="navBar" class="collapse navbar-collapse py-0">
+                        <ul id="scrollNav" class="navbar-nav  u-header__navbar-nav" style="margin-top:-5px; font-size:18px;">
+
+                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1100px">
+                                <a href="@Url.Action("Index","Cinema")" id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#FFF">
+                                    Home
+                                    <span class="fa fa-angle-down u-header__nav-link-icon"></span>
+                                </a>
+
+                                <!-- Blog - Submenu -->
+                                <!-- End Submenu -->
+                            </li>
+
+                            
+
+                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                <a id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#fff">
+                                    Login
+                                    <span class="fa fa-user"></span>
+                                </a>
+
+
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+                </nav>
+
+                <!-- End Navigation -->
+            </div>
+        </div>
+
+    </header>
+
+
+    <br /><br /><br /><br />
+    <div class="pyidaungsu">
+
+        @model cinema.Models.MoviePaging
+        @using PagedList;
+        @using PagedList.Mvc;
+
+
+        <main id="content" role="main">
+            <!-- End News Carousel -->
+
+
+            <br />
+
+
+            <div class="row">
+
+                <br /><br />
+                <br /><br /><br />
+                @foreach (var item in Model.movieList)
+                {
+                    <div class="col-md-3" id="card-@item.movieid">
+                        <div class="custom-card">
+                            <div class="text-center" style="padding-top:15px">
+                                <img src="@item.moviephotho" width="320" height="240" />
+                                  
+                            </div>
+                            @if (item.moviename == null)
+                            {
+                                <h4 class="text-center myanmar3font" style="padding-bottom:7px;">Unknown </h4>
+                            }
+                            else
+                            {
+                                <h4 class="text-center myanmar3font" style="padding-bottom:7px;">@item.moviename </h4>
+                            }
+                            @if (item.showingevent == null)
+                            {
+                                <h4 class="text-center myanmar3font" style="padding-bottom:7px;">Unknown </h4>
+                            }
+                            else
+                            {
+                                <h4 class="text-center myanmar3font" style="padding-bottom:7px;">@item.showingevent </h4>
+                            }
+                            <div class="row" style="text-align:center;padding-left:90px">
+                                <a href="@Url.Action("ViewDetail", "Cinema",new { movieid = @item.movieid })" class="btn btn-sm btn-primary" style="padding-left:17px;padding-right:17px;margin-right:5px">View Detail</a> 
+                                <a href="@Url.Action("BookMovie", "Booking",new { movieid = @item.movieid })" class="btn btn-sm btn-primary" style="padding-left:17px;padding-right:17px;">Book Now</a>
+                               
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+
+
+
+
+            </div>
+            <div class="">
+                <div class="pagedList" style="text-align:center">
+                    @Html.PagedListPager(Model.movieList, page => Url.Action("Browsemovie", "Cinema",
+                    new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+                </div>
+            </div>
+
+
+        </main>
+
+
+
+    </div>
+
+    <footer class="footer_custom">
+        <div class="container u-space-1-bottom">
+            <div class="row justify-content-lg-between mb-7">
+                <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
+                    <!-- Title -->
+                    <h3 class="h6 text-white">
+                        <strong>BROWSE ALL</strong>
+                    </h3>
+                    <!-- End Title -->
+                    <!-- List -->
+                    <ul class="list-unstyled u-list u-list--white">
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="NowShowing" })">Now Showing</a></li>
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="ComingSoon" })">Comming Soon</a></li>
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema")">All Moives</a></li>
+
+                    </ul>
+                    <!-- End List -->
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
+                    <!-- Title -->
+                    <h3 class="h6 text-white">
+                        <strong>Contacts</strong>
+                    </h3>
+                    <!-- End Title -->
+                    <!-- Address -->
+                    <address class="u-list">
+                        <span class="u-list__link text-white"><strong>Call us : </strong><br />+959 973 546 733</span>
+                        <span class="u-list__link text-white"><strong>Email us : </strong><br /><span class="list-unstyled u-list u-list--white"><a href="#" class="u-list__link">hninphyuphyuaung70@gmail.com</a></span></span>
+                        <span class="u-list__link text-white"><strong>Address : </strong><br />Yangon , Myanmar</span>
+                    </address>
+                    <!-- End Address -->
+                </div>
+
+
+
+
+
+
+                <div class="col-sm-4 col-md-4 col-lg-5">
+                    <div class="mb-4">
+                        <!-- Title -->
+                        <h3 class="h6 text-white">
+                            <strong>Connect with us: </strong>
+                        </h3>
+                        <!-- Input -->
+                        <div class="js-validate js-form-message" novalidate="novalidate">
+                            <div class="form-group">
+                                <input type="text" id="namefooter" name="name" class="form-control" placeholder="Name:" width="200px;" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="emailfooter" name="email" class="form-control" placeholder="Email:" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" id="messagefooter" name="message" placeholder="Message:" rows="3" autocomplete="off"></textarea>
+                            </div>
+                            <div class="form-group text-left">
+                                <button class="btn btn-xs sendbtn" name="send" style="color:dimgray" onclick="send()">Send</button>
+                                <span id="sentsuccessfully" style="color:#ffffff" class="float-right" hidden>Your message was sent successfully !</span>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+
+                    </div>
+                    <ul class="list-inline mb-0">
+
+                        <li class="list-inline-item">
+                            <a class="u-bg-transparent u-icon u-icon--sm u-icon-light--air" href="#">
+                                <span class="fab fa-google u-icon__inner" style="font-size:1.3em"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End Social Networks -->
+                </div>
+            </div>
+            <hr />
+
+        </div>
+    </footer>
+
+    <a class="js-go-to u-go-to" data-position='{"bottom": 15, "right": 15 }' data-type="fixed"
+       data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+        <span class="fa fa-arrow-up u-go-to__inner"></span>
+    </a>
+
+
+    <script src="~/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="~/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+    <script src="~/assets/vendor/typed.js/lib/typed.min.js"></script>
+    <script src="~/assets/vendor/slick-carousel/slick/slick.js"></script>
+
+    <!-- JS Front -->
+    <script src="~/assets/js/hs.core.js"></script>
+    <script src="~/assets/js/components/hs.header.js"></script>
+    <script src="~/assets/js/components/hs.unfold.js"></script>
+    <script src="~/assets/js/helpers/hs.focus-state.js"></script>
+    <script src="~/assets/js/components/hs.malihu-scrollbar.js"></script>
+    <script src="~/assets/js/components/hs.validation.js"></script>
+    <script src="~/assets/js/components/hs.fancybox.js"></script>
+    <script src="~/assets/js/components/hs.slick-carousel.js"></script>
+    <script src="~/assets/js/components/hs.show-animation.js"></script>
+    <script src="~/assets/js/components/hs.go-to.js"></script>
+    <!-- JS Implementing Plugins -->
+
+
+
+    <script type="text/javascript">
+        function readmore(id) {
+            location.href = "/CSONews/ReadMore/" + id;
+        }
+        $(function () {
+            $.ajax({
+                cache: false,
+                url: '/Home/GetLatestDailyData',
+                beforeSend: function () {
+
+                },
+                success: function (myData) {
+                    //console.log(myData);
+                    $('#firstslide').empty().append('<br><span>30 Aug 2019</span><br><h6 class="font-weight-normal">Reference Rate(CBM)- 1 USD <br><b>= ' + myData.USDCBM + ' kyats </b><br>Counter Rate(KBZ)- 1 USD <br><b>= ' + myData.USDKBZ + ' kyats </b><br> Market Rate(Call Centre)- 1 USD <br><b>= ' + myData.USDCallCenter + ' kyats </b><br>Gold Price(24 Carat) 1 tikal <br><b>= ' + myData.GoldPrice + ' kyats</b><br><br><br>');
+                },
+                complete: function () {
+
+                }
+            })
+        });
+        $(function () {
+            showlist('/Home/ListOfNews', "#listofNews");
+        });
+
+        function showlist(action, div) {
+            $.ajax({
+                cache: false,
+                url: action,
+                beforeSend: function () {
+                    $(div).empty().append('<div class="text-center"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div></div>');
+                },
+                success: function (myData) {
+                    $(div).empty().append(myData);
+                },
+                complete: function () {
+                }
+            });
+        }
+    </script>
+
+    <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            // initialization of slick carousel
+            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        });
+    </script>
+    <!-- JS Plugins Init. -->
+    <!-- JS Implementing Plugins -->
+    <script src="/assets/js/components/hs.video-player.js"></script>
+    <!-- JS Plugins Init. -->
+    <script>
+        $(function () {
+            // initialization of slick carousels
+            $.HSCore.components.HSVideoPlayer.init('.js-classes-toggle', {
+                oneClick: function () {
+                    $('#youTubeVideo').attr('src', $('#youTubeVideo').data('src'));
+                }
+            });
+        });
+    </script>
+    <script>
+        $(window).on('load', function () {
+            // initialization of HSMegaMenu component
+            $('.js-mega-menu').HSMegaMenu({
+                event: 'hover',
+                pageContainer: $('.container'),
+                breakpoint: 768,
+                hideTimeOut: 0
+            });
+        });
+
+        $(document).on('ready', function () {
+            // initialization of header
+            $.HSCore.components.HSHeader.init($('#header'));
+
+            // initialization of unfold component
+            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'), {
+                afterOpen: function () {
+                    $(this).find('input[type="search"]').focus();
+                }
+            });
+
+            // initialization of malihu scrollbar
+            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
+
+            // initialization of forms
+            $.HSCore.helpers.HSFocusState.init();
+
+            // initialization of form validation
+            $.HSCore.components.HSValidation.init('.js-validate', {
+                rules: {
+                    confirm_password: {
+                        equalTo: '#password'
+                    }
+                }
+            });
+
+            // initialization of show animations
+            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
+
+            // initialization of go to
+            $.HSCore.components.HSGoTo.init('.js-go-to');
+        });
+
+    </script>
+    <script type="text/javascript">
+        var pagename = null;
+        (function () {
+            pagename = 'Home';
+            $('.bartitle').removeClass('active');
+            $('#' + pagename).addClass('active');
+
+
+
+            //var chosen = "en";
+            //document.getElementById("languageDropdown").onchange = function () {
+            //    document.getElementById(chosen).style.display = "none";
+            //    chosen = this.value;
+            //    document.getElementById(chosen).style.display = "block";
+            //}
+        })();
+
+        function changelang(e) {
+            var lang = $(e).attr('data-id');
+            if (pagename == "Home") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/IndexMyanmar";
+                } else {
+                    window.location = "/Home/Index";
+                }
+            } else if (pagename == "Statistic") {
+                if (lang == "myanmar") {
+                    window.location = "/Statistics/MyanmarInformationReports";
+                } else {
+                    window.location = "/Statistics/InformationReports";
+                }
+            } else if (pagename == "CSONews") {
+                if (lang == "myanmar") {
+                    window.location = "/CSONews/ListsOfCSONewsMyanmar";
+                } else {
+                    window.location = "/CSONews/ListsOfCSONews";
+                }
+            } else if (pagename == "MonthlyPublication") {
+                if (lang == "myanmar") {
+                    window.location = "/PublicationAndRelease/MonthlyPublicationMyanmar";
+                } else {
+                    window.location = "/PublicationAndRelease/MonthlyPublication";
+                }
+            } else if (pagename == "StatisticalYearbook") {
+                if (lang == "myanmar") {
+                    window.location = "/PublicationAndRelease/StatisticalYearbookMyanmar";
+                } else {
+                    window.location = "/PublicationAndRelease/StatisticalYearbook";
+                }
+            }
+            else if (pagename == "RulesAndRegulation") {
+                if (lang == "myanmar") {
+                    window.location = "/Laws/RulesAndRegulationMyanmar";
+                } else {
+                    window.location = "/Laws/RulesAndRegulation";
+                }
+            }
+            else if (pagename == "Marketprice") {
+                if (lang == "myanmar") {
+                    window.location = "/Statistics/MarketPriceMyanmar";
+                } else {
+                    window.location = "/Statistics/MarketPrice";
+                }
+            } else if (pagename == "AboutCSO") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/AboutMyanmar";
+                } else {
+                    window.location = "/Home/About";
+                }
+            }
+            else if (pagename == "Activities") {
+                if (lang == "myanmar") {
+                    window.location = "/AboutCSO/Activitiesmyanmar";
+                } else {
+                    window.location = "/AboutCSO/Activities";
+                }
+            }
+            else if (pagename == "StatisticLaw") {
+                if (lang == "myanmar") {
+                    window.location = "/Laws/StatisticLawMyanmar";
+                } else {
+                    window.location = "/Laws/StatisticLaw";
+                }
+            }
+            else if (pagename == "SMEI") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/SMEIMyanmar";
+                } else {
+                    window.location = "/Home/SMEI";
+                }
+            }
+            else if (pagename == "SiteMap") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/SiteMapMyanmar";
+                } else {
+                    window.location = "/Home/SiteMap";
+                }
+            }
+            else if (pagename == "VisionAndMission") {
+                if (lang == "myanmar") {
+                    window.location = "/AboutCSO/VisionAndMissionMyanmar";
+                } else {
+                    window.location = "/AboutCSO/VisionAndMission";
+                }
+            }
+            else if (pagename == "StatisticalSystem") {
+                if (lang == "myanmar") {
+                    window.location = "/AboutCSO/StatisticalSystemMyanmar";
+                } else {
+                    window.location = "/AboutCSO/StatisticalSystem";
+                }
+            }
+            else if (pagename == "Sitemap") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/SitemapMyanmar";
+                } else {
+                    window.location = "/Home/Sitemap";
+                }
+            }
+            else if (pagename == "PEJournal") {
+                if (lang == "myanmar") {
+                    window.location = "/PublicationAndRelease/PEJournalMyanmar";
+                } else {
+                    window.location = "/PublicationAndRelease/PEJournal";
+                }
+            }
+            else if (pagename == "MyanAgriculture") {
+                if (lang == "myanmar") {
+                    window.location = "/PublicationAndRelease/MyanAgricultureMyanmar";
+                } else {
+                    window.location = "/PublicationAndRelease/MyanAgriculture";
+                }
+            }
+            else if (pagename == "QuarterlyBulletin") {
+                if (lang == "myanmar") {
+                    window.location = "/PublicationAndRelease/QuarterlyBulletinMyanmar";
+                } else {
+                    window.location = "/PublicationAndRelease/QuarterlyBulletin";
+                }
+            }
+            else if (pagename == "DAQS") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/DAQSMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/DAQS";
+                }
+            }
+            else if (pagename == "NIF") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/NIFMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/NIF";
+                }
+            }
+            else if (pagename == "NQAF") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/NQAFMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/NQAF";
+                }
+            }
+
+            else if (pagename == "NSDS") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/NSDSMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/NSDS";
+                }
+            }
+            else if (pagename == "PolicyBrief") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/PolicyBriefMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/PolicyBrief";
+                }
+            }
+            else if (pagename == "SDGs") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/SDGsMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/SDGs";
+                }
+            }
+            else if (pagename == "SSCG") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/SSCGMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/SSCG";
+                }
+            }
+            else if (pagename == "PolicyBrief") {
+                if (lang == "myanmar") {
+                    window.location = "/PolicyAndStrategy/PolicyBriefMyanmar";
+                } else {
+                    window.location = "/PolicyAndStrategy/PolicyBrief";
+                }
+            }
+            else if (pagename == "PriceReport") {
+                if (lang == "myanmar") {
+                    window.location = "/InformationAndReport/PriceReportMyanmar";
+                } else {
+                    window.location = "/InformationAndReport/PriceReport";
+                }
+            }
+
+            else if (pagename == "SurveyReport") {
+                if (lang == "myanmar") {
+                    window.location = "/InformationAndReport/SurveyReportMyanmar";
+                } else {
+                    window.location = "/InformationAndReport/SurveyReport";
+                }
+            }
+            else if (pagename == "InflationReport") {
+                if (lang == "myanmar") {
+                    window.location = "/InformationAndReport/InflationReportMyanmar";
+                } else {
+                    window.location = "/InformationAndReport/InflationReport";
+                }
+            }
+            else if (pagename == "TradeReport") {
+                if (lang == "myanmar") {
+                    window.location = "/InformationAndReport/TradeReportMyanmar";
+                } else {
+                    window.location = "/InformationAndReport/TradeReport";
+                }
+            }
+            else if (pagename == "InfographicInformation") {
+                if (lang == "myanmar") {
+                    window.location = "/InformationAndReport/InfographicInformationMyanmar";
+                } else {
+                    window.location = "/InformationAndReport/InfographicInformation";
+                }
+            }
+            else if (pagename == "Announment") {
+                if (lang == "myanmar") {
+                    window.location = "/CSONews/AnnounmentMyanmar";
+                } else {
+                    window.location = "/CSONews/Announment";
+                }
+            }
+            else if (pagename == "StatisticYearBookshop") {
+                if (lang == "myanmar") {
+                    window.location = "/AvailableBookshop/StatisticYearBookshopMyan";
+                } else {
+                    window.location = "/AvailableBookshop/StatisticYearBookshop";
+                }
+            }
+            else if (pagename == "Gallery") {
+                if (lang == "myanmar") {
+                    window.location = "/AboutCSO/GalleryMyanmar";
+                } else {
+                    window.location = "/AboutCSO/Gallery";
+                }
+            }
+
+            else if (pagename == "SurveyCalender") {
+                if (lang == "myanmar") {
+                    window.location = "/CSONews/SurveyCalenderMyanmar";
+                } else {
+                    window.location = "/CSONews/SurveyCalender";
+                }
+            }
+            else if (pagename == "SurveyHightLights") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/SurveyHLMyanmar";
+                } else {
+                    window.location = "/Home/SurveyHightLights";
+                }
+            }
+            else if (pagename == "OrganizationStructure") {
+                if (lang == "myanmar") {
+                    window.location = "/AboutCSO/OrganizationStructureMyan";
+                } else {
+                    window.location = "/AboutCSO/OrganizationStructure";
+                }
+            }
+            else if (pagename == "Tender") {
+                if (lang == "myanmar") {
+                    window.location = "/CSONews/TenderMyanmar";
+                } else {
+                    window.location = "/CSONews/Tender";
+                }
+            }
+            else if (pagename == "Announment") {
+                if (lang == "myanmar") {
+                    window.location = "/CSONews/AnnounmentMyanmar";
+                } else {
+                    window.location = "/CSONews/Announment";
+                }
+            }
+            else if (pagename == "MEMS") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/MEMSMyan";
+                } else {
+                    window.location = "/Home/MEMS";
+                }
+            }
+            else if (pagename == "HouseholdSH") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/HouseholdMyan";
+                } else {
+                    window.location = "/Home/HouseholdSH";
+                }
+            }
+            else if (pagename == "Link") {
+                if (lang == "myanmar") {
+                    window.location = "/Home/LinkMyan";
+                } else {
+                    window.location = "/Home/Link";
+                }
+            }
+
+        }
+
+        //var VideoElements = document.getElementsByTagName('video');
+        //for (var i = 0; i < VideoElements.length; i++) {
+        //    videojs(VideoElements[i]).ready(function () {
+        //        var myPlayer = this;
+        //    });
+        //}
+
+
+        //$(document).ready(function () {
+        //    // The default language is English
+        //    var lang = "en";
+        //    $(".lang").each(function (index, element) {
+        //        $(this).text(arrLang[lang][$(this).attr("key")]);
+        //    });
+        //});
+
+        //// get/set the selected language
+        //$(".translate").click(function () {
+        //    var lang = $(this).attr("id");
+
+        //    $(".lang").each(function (index, element) {
+        //        $(this).text(arrLang[lang][$(this).attr("key")]);
+
+        //    });
+        //});
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("a").click(function () {
+                $("p").toggle();
+            });
+        });
+
+
+        $(function () {
+            $.fn.SendEmail = function (Name, Email, Message) {
+
+                $.ajax({
+                    url: '/AboutCSO/SendEmail',
+                    dataType: "json",
+                    type: "POST",
+                    //headers: { "__RequestVerificationToken": token },
+                    contentType: 'application/x-www-form-urlencoded; charset=utf-8',    //replace /json to the urlenoded
+                    data: { Name: Name, Email: Email, Message: Message },                 // data is not json
+                    async: true,
+                    processData: true,                                                  //important to use it as true
+                    cache: false,
+                    success: function (data) {
+                        if (data == "success") {
+                            //alert('Sending Email Success');
+                            $('#namefooter').val("");
+                            $('#emailfooter').val("");
+                            $('#messagefooter').val("");
+                            $('#sentsuccessfully').html("Your message was sent successfully !");
+                            $('#sentsuccessfully').removeAttr("hidden");
+                            setTimeout(function () { removesuccess(); }, 4000);
+                        }
+                    },
+                    error: function (xhr) {
+                        $('#sentsuccessfully').html("Invalid Email !");
+                        $('#sentsuccessfully').removeAttr("hidden");
+                        setTimeout(function () { removesuccess(); }, 4000);
+                    }
+                });
+            }
+        })
+
+
+
+        function removesuccess() {
+            $("#sentsuccessfully").attr("hidden", true);
+        }
+
+        function send() {
+            var Name = $('#namefooter').val();
+            var Email = $('#emailfooter').val();
+            var Message = $('#messagefooter').val();
+            if (Email != null && Email != "") {
+                $.fn.SendEmail(Name, Email, Message);
+            }
+        }
+
+    </script>
+</body>
+</html>

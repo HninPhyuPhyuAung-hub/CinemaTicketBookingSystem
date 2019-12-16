@@ -1,0 +1,386 @@
+﻿
+@{ Layout = null;}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title -->
+    <title> &nbsp; Cinema Ticket Booking  </title>
+    <!-- Required Meta Tags Always Come First -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>Home</title>
+    <!-- Favicon -->
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="~/assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="~/assets/vendor/dzsparallaxer/dzsparallaxer.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="~/assets/vendor/font-awesome/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/animate.css/animate.min.css">
+    <link rel="stylesheet" href="~/assets/vendor/hs-megamenu/src/hs.megamenu.css">
+    <link rel="stylesheet" href="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link href="~/assets/vendor/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+    <!-- CSS Front Template -->
+    <link rel="stylesheet" href="~/assets/css/front.css">
+    <link rel="stylesheet" href="~/assets/vendor/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="~/assets/vendor/hs-bg-video/hs-bg-video.css">
+    <link href="~/assets/css/custom-front.css" rel="stylesheet" />
+    <link href="~/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet" />
+
+
+    <link href="~/Videojs/video-js.css" rel="stylesheet" />
+</head>
+@model cinema.Models.moviedetail
+<body>
+    <link href="~/assets/css/custom-front.css" rel="stylesheet" />
+
+    <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md u-header--untransitioned" data-header-fix-moment="500" data-header-fix-effect="slide">
+
+
+        <div style="background-color:#000000">
+            <div id="logoAndNav" class="container">
+                <!-- Nav -->
+                <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar hs-menu-initialized hs-menu-horizontal">
+                    <button type="button" class="navbar-toggler btn u-hamburger collapsed" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+                        <span id="hamburgerTrigger" class="u-hamburger__box">
+                            <span class="u-hamburger__inner1" style="color:white;"></span>
+                        </span>
+                    </button>
+                    <div id="navBar" class="collapse navbar-collapse py-0">
+                        <ul id="scrollNav" class="navbar-nav  u-header__navbar-nav" style="margin-top:-5px; font-size:18px;">
+
+                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1100px">
+                                <a href="@Url.Action("Index","Cinema")" id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#FFF">
+                                    Home
+                                    <span class="fa fa-angle-down u-header__nav-link-icon"></span>
+                                </a>
+
+                                <!-- Blog - Submenu -->
+                                <!-- End Submenu -->
+                            </li>
+
+
+
+                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                                <a id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#fff">
+                                    Login
+                                    <span class="fa fa-user"></span>
+                                </a>
+
+
+                            </li>
+
+
+
+                        </ul>
+                    </div>
+
+                </nav>
+
+                <!-- End Navigation -->
+            </div>
+        </div>
+
+    </header>
+
+
+
+
+    <div class="pyidaungsu">
+
+
+
+        <main id="content" role="main">
+            <!-- End News Carousel -->
+
+
+
+
+
+            <div class="position-relative u-bg-light-blue-50 custom_paragraph">
+                <div class="container u-space-1">
+                    <!-- Title -->
+                    <!-- End Title -->
+                    <div class="row">
+
+
+
+                        <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+
+                            <!-- News Carousel -->
+                            <div class="js-slick-carousel transition-3d-hover" data-slides-show="1" style="margin-top:-20px"
+                                 data-autoplay="true"
+                                 data-slides-scroll="1"
+                                 data-responsive='[{
+      "breakpoint": 992,
+      "settings": {
+        "slidesToShow": 2
+      }
+    }, {
+      "breakpoint": 768,
+      "settings": {
+        "slidesToShow": 1
+
+      }
+    }, {
+      "breakpoint": 554,
+      "settings": {
+        "slidesToShow": 1
+      }
+    }]'>
+                                <div class="text-center" style="padding-top:15px">
+                                    <video width="400" height="400" controls autoplay="autoplay">
+                                        <source src="@Model.trailer" type="video/mp4">
+                                    </video>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
+                            <h4 class="font-weight-bold">Available Now</h4>
+
+                            <br />
+                            <br />
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-10"> <a href="#"> <span class="available-card" style="font-size:30px;color:black">@Model.moviename</span></a><br /></div>
+                            </div>
+
+                            @if (Model.movietime != null)
+                            {
+                                <div class="row">
+                                    <div class="col-1"><i class="fas fa-caret-right pr-1 mt-1"></i> </div>
+                                    <div class="col-10"><a href="#"> <span class="available-card">@Model.movietype | @Model.movietime.Value.Hours hrs @Model.movietime.Value.Minutes mins</span></a><br /></div>
+                                </div>
+                            }
+
+                            <div class="row">
+                                <div class="col-1"><i class="fas fa-caret-right pr-1 mt-1"></i> </div>
+                                <div class="col-10"><a href="#"> <span class="available-card">Actors: @Model.actor</span> </a><br /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-1"><i class="fas fa-caret-right pr-1 mt-1"></i> </div>
+                                <div class="col-10"><a href="#"> <span class="available-card">Director: @Model.director</span> </a><br /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-1"><i class="fas fa-caret-right pr-1 mt-1"></i> </div>
+                                <div class="col-10"> <a href="#"> <span class="available-card">Rating: @Model.rating</span> </a><br /></div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                    <br />
+                </div>
+            </div>
+
+            <div class="container u-space-1">
+                <!-- Title -->
+                <div class="w-md-80 w-lg-50 text-center mx-auto">
+                    <a href="@Url.Action("BookMovie","Booking",new { @Model.movieid})" class="btn btn-primary" type="submit">Book Now</a>
+
+
+                </div>
+
+            </div>
+
+
+        </main>
+
+
+
+    </div>
+    }
+    <footer class="footer_custom">
+        <div class="container u-space-1-bottom">
+            <div class="row justify-content-lg-between mb-7">
+                <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
+                    <!-- Title -->
+                    <h3 class="h6 text-white">
+                        <strong>BROWSE ALL</strong>
+                    </h3>
+                    <!-- End Title -->
+                    <!-- List -->
+                    <ul class="list-unstyled u-list u-list--white">
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="NowShowing" })">Now Showing</a></li>
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="ComingSoon" })">Comming Soon</a></li>
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema")">All Moives</a></li>
+
+                    </ul>
+                    <!-- End List -->
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
+                    <!-- Title -->
+                    <h3 class="h6 text-white">
+                        <strong>Contacts</strong>
+                    </h3>
+                    <!-- End Title -->
+                    <!-- Address -->
+                    <address class="u-list">
+                        <span class="u-list__link text-white"><strong>Call us : </strong><br />+959 973 546 733</span>
+                        <span class="u-list__link text-white"><strong>Email us : </strong><br /><span class="list-unstyled u-list u-list--white"><a href="#" class="u-list__link">hninphyuphyuaung70@gmail.com</a></span></span>
+                        <span class="u-list__link text-white"><strong>Address : </strong><br />Yangon , Myanmar</span>
+                    </address>
+                    <!-- End Address -->
+                </div>
+
+
+
+
+
+
+                <div class="col-sm-4 col-md-4 col-lg-5">
+                    <div class="mb-4">
+                        <!-- Title -->
+                        <h3 class="h6 text-white">
+                            <strong>Connect with us: </strong>
+                        </h3>
+                        <!-- Input -->
+                        <div class="js-validate js-form-message" novalidate="novalidate">
+                            <div class="form-group">
+                                <input type="text" id="namefooter" name="name" class="form-control" placeholder="Name:" width="200px;" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="emailfooter" name="email" class="form-control" placeholder="Email:" autocomplete="off">
+                            </div>
+
+                            <div class="form-group">
+                                <textarea class="form-control" id="messagefooter" name="message" placeholder="Message:" rows="3" autocomplete="off"></textarea>
+                            </div>
+                            <div class="form-group text-left">
+                                <button class="btn btn-xs sendbtn" name="send" style="color:dimgray" onclick="send()">Send</button>
+                                <span id="sentsuccessfully" style="color:#ffffff" class="float-right" hidden>Your message was sent successfully !</span>
+                            </div>
+                        </div>
+                        <!-- End Input -->
+
+                    </div>
+                    <ul class="list-inline mb-0">
+
+                        <li class="list-inline-item">
+                            <a class="u-bg-transparent u-icon u-icon--sm u-icon-light--air" href="#">
+                                <span class="fab fa-google u-icon__inner" style="font-size:1.3em"></span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End Social Networks -->
+                </div>
+            </div>
+            <hr />
+
+        </div>
+    </footer>
+
+    <a class="js-go-to u-go-to" data-position='{"bottom": 15, "right": 15 }' data-type="fixed"
+       data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
+        <span class="fa fa-arrow-up u-go-to__inner"></span>
+    </a>
+
+
+    <script src="~/assets/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+    <script src="~/assets/vendor/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="~/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <!-- JS Implementing Plugins -->
+    <script src="~/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script src="~/assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/assets/vendor/fancybox/jquery.fancybox.min.js"></script>
+    <script src="~/assets/vendor/typed.js/lib/typed.min.js"></script>
+    <script src="~/assets/vendor/slick-carousel/slick/slick.js"></script>
+
+    <!-- JS Front -->
+    <script src="~/assets/js/hs.core.js"></script>
+    <script src="~/assets/js/components/hs.header.js"></script>
+    <script src="~/assets/js/components/hs.unfold.js"></script>
+    <script src="~/assets/js/helpers/hs.focus-state.js"></script>
+    <script src="~/assets/js/components/hs.malihu-scrollbar.js"></script>
+    <script src="~/assets/js/components/hs.validation.js"></script>
+    <script src="~/assets/js/components/hs.fancybox.js"></script>
+    <script src="~/assets/js/components/hs.slick-carousel.js"></script>
+    <script src="~/assets/js/components/hs.show-animation.js"></script>
+    <script src="~/assets/js/components/hs.go-to.js"></script>
+    <!-- JS Implementing Plugins -->
+
+
+
+
+    <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+    <script>
+        $(document).on('ready', function () {
+            // initialization of slick carousel
+            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
+        });
+    </script>
+    <!-- JS Plugins Init. -->
+    <!-- JS Implementing Plugins -->
+    <script src="/assets/js/components/hs.video-player.js"></script>
+    <!-- JS Plugins Init. -->
+
+
+
+    <script>
+        $(function () {
+            $.fn.SendEmail = function (Name, Email, Message) {
+
+                $.ajax({
+                    url: '/Cinema/ReceiveMessage',
+                    dataType: "json",
+                    type: "POST",
+                    //headers: { "__RequestVerificationToken": token },
+                    contentType: 'application/x-www-form-urlencoded; charset=utf-8',    //replace /json to the urlenoded
+                    data: { Name: Name, Email: Email, Message: Message },                 // data is not json
+                    async: true,
+                    processData: true,                                                  //important to use it as true
+                    cache: false,
+                    success: function (data) {
+                        if (data == "Success") {
+                            //alert('Sending Email Success');
+                            $('#namefooter').val("");
+                            $('#emailfooter').val("");
+                            $('#messagefooter').val("");
+                            $('#sentsuccessfully').html("Your message was sent successfully !");
+                            $('#sentsuccessfully').removeAttr("hidden");
+                            setTimeout(function () { removesuccess(); }, 4000);
+                        }
+                    },
+                    error: function (xhr) {
+                        $('#sentsuccessfully').html("Invalid Email !");
+                        $('#sentsuccessfully').removeAttr("hidden");
+                        setTimeout(function () { removesuccess(); }, 4000);
+                    }
+                });
+            }
+        })
+
+        function removesuccess() {
+            $("#sentsuccessfully").attr("hidden", true);
+        }
+
+        function send() {
+            var Name = $('#namefooter').val();
+            var Email = $('#emailfooter').val();
+            var Message = $('#messagefooter').val();
+
+            if (Email != null && Email != "") {
+                $.fn.SendEmail(Name, Email, Message);
+            }
+            else {
+                alert("Please Fill Your Email Address!")
+            }
+        }
+
+    </script>
+</body>
+</html>

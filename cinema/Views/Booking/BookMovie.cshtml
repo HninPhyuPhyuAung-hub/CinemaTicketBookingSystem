@@ -1,0 +1,609 @@
+﻿@{Layout = null;}
+<!--
+    Author: W3layouts
+    Author URL: http://w3layouts.com
+    License: Creative Commons Attribution 3.0 Unported
+    License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Movie Seat Selection Flat Responsive Widget Template :: w3layouts</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Movie Seat Selection a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Index-Page-CSS -->
+
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all">
+    <!-- //Custom-Stylesheet-Links -->
+    <!--fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <!-- //fonts -->
+</head>
+
+
+<body>
+
+    <h1>Movie Seat Selection</h1>
+    <div class="container">
+
+        <div class="w3ls-reg">
+            <!-- input fields -->
+            <div class="inputForm">
+                <h2>fill the required details below and select your seats</h2>
+                <div class="mr_agilemain">
+                    <div class="agileits-left">
+                        <label>
+                            Choose Theatre
+                        </label>
+                        <div class="form-group">
+
+                            @{
+                                var theartre = new List<SelectListItem>()
+                                {
+
+                                };
+                            }
+
+                            <select name="theartre" class="form-control selectboxit" id="theartre" value="theartre" onchange="ShowMovieTime()"></select>
+                        </div>
+
+
+                    </div>
+                    <div class="agileits-left">
+                        <label>
+                            Choose Movie Date
+
+                        </label>
+                        <div class="form-group">
+                            @{
+                                var mdate = new List<SelectListItem>()
+                                {
+
+                                };
+                            }
+
+                            <select name="mdate" class="form-control selectboxit" id="mdate" value="mdate" onchange="ShowMoviedate()"></select>
+                        </div>
+                    </div>
+                    <div class="agileits-left">
+                        <label>
+                            Choose Movie Time
+
+                        </label>
+                        <div class="form-group">
+                            @{
+                                var mtime = new List<SelectListItem>()
+                                {
+
+                                };
+                            }
+
+                            <select name="mtime" class="form-control selectboxit" id="mtime" value="mtime" ></select>
+                        </div>
+                    </div>
+                    <div class="agileits-right">
+
+                        <input type="text" id="Numseats" required min="1" placeholder="Seat Number" onchange="takeData()" >
+                    </div>
+                    <br />
+                </div>
+                @*<div class="StartSelect mr_agilemain" style="visibility:hidden">
+                <div class="agileits-left">
+                    <label>
+                        Name
+                        <span>*</span>
+                    </label>
+                    <input type="text" id="Username" required>
+                </div>
+                <div class="agileits-left">
+                    <label>
+                        PhoneNumber
+                        <span>*</span>
+                    </label>
+                    <input type="text" id="PhoneNumber" required>
+                </div>
+                <div class="agileits-right">
+                    <label>
+                        Number of Seats
+                        <span>*</span>
+                    </label>
+                    <input type="number" id="Numseats" required min="1">
+                </div>
+            </div>*@
+
+                @* <button class="selectbutton" onclick="takeData()" style="visibility:hidden;">Start Selecting</button>*@
+
+
+            </div>
+
+            @model cinema.Models.ListViewModel
+            <!-- //input fields -->
+            <!-- seat availabilty list -->
+            <ul class="seatcolor seat_w3ls" style="visibility:hidden">
+                <li class="smallBox greenBox">Selected Seat</li>
+
+                <li class="smallBox blueBox">Reserved Seat</li>
+
+                <li class="smallBox redBox">Unavailable Seat</li>
+
+                <li class="smallBox emptyBox">Empty Seat</li>
+            </ul>
+            <!-- seat availabilty list -->
+            <!-- seat layout -->
+            <div class="seatStructure txt-center" style="overflow-x:auto;visibility:hidden">
+                <table id="seatsBlock">
+                    <p id="notification"></p>
+                    <tr>
+                        <td></td>
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            <td>@i</td>
+
+
+                        }
+
+
+                        @for (int i = 11; i <= 20; i++)
+                        {
+                            <td>@i</td>
+                        }
+                    </tr>
+
+
+                    @for (int i = 0; i < 8; i++)
+                    {
+                        <tr>
+                            @if (i == 0)
+                            {
+                                <td>
+                                    A
+                                </td>
+                            }
+                            else if (i == 1)
+                            {
+                                <td>
+                                    B
+                                </td>
+                            }
+                            else if (i == 2)
+                            {
+                                <td>
+                                    C
+                                </td>
+                            }
+                            else if (i == 3)
+                            {
+                                <td>
+                                    D
+                                </td>
+                            }
+                            else if (i == 4)
+                            {
+                                <td>
+                                    E
+                                </td>
+                            }
+                            else if (i == 5)
+                            {
+                                <td>
+                                    F
+                                </td>
+                            }
+
+                            else if (i == 6)
+                            {
+                                <td>
+                                    G
+                                </td>
+                            }
+                            else if (i == 7)
+                            {
+                                <td>
+                                    H
+                                </td>
+                            }
+
+                            @for (int j = i * 20; j < (i * 20) + 20; j++)
+                            {
+
+                                if (Model.seatselection[j].ispaid == true)
+                                {
+                                    <td>
+                                        <input type="checkbox" value="@Model.seatselection[j].seatname=@Model.seatselection[j].price" onclick="return false;" style="background-color:red">
+                                        <input type="hidden" class="seats" value="@Model.seatselection[j].showid" id="Showid" />
+                                    </td>
+                                }
+                                else if (Model.seatselection[j].ispaid == false)
+                                {
+                                    <td>
+                                        <input type="checkbox" class="seats" value="@Model.seatselection[j].seatname=@Model.seatselection[j].price" data-valuetwo="@Model.seatselection[j].price" onclick="return false;" style="background-color:red">
+                                        <input type="hidden" class="seats" value="@Model.seatselection[j].showid" id="Showid" />
+                                    </td>
+                                }
+                                else
+                                {
+                        <td>
+
+                            <input type="checkbox" class="seats" value="@Model.seatselection[j].seatname=@Model.seatselection[j].price" data-valuetwo="@Model.seatselection[j].price" data-valuethree="@Model.seatselection[j].seatname" onclick="updateTextArea()">
+                            <input type="hidden" class="seats" value="@Model.seatselection[j].showid" id="Showid" />
+                        </td>
+                                }
+                            }
+
+                           
+
+
+                        </tr>
+                    }
+
+
+                </table>
+                <br />
+                <<br />
+
+                <button style="margin:8px;" onclick="orderconfirm()">Confirm Order</button>
+
+            </div>
+            <!-- //seat layout -->
+            <!-- details after booking displayed here -->
+            <div class="StartSelect mr_agilemain" style="visibility:hidden">
+                <div class="agileits-left">
+                    <label>
+                        Name
+                        <span>*</span>
+                    </label>
+                    <input type="text" id="Username" required onchange="userinformation()">
+                </div>
+                <div class="agileits-left">
+                    <label>
+                        PhoneNumber
+                        <span>*</span>
+                    </label>
+                    <input type="text" id="PhoneNumber" required onchange="userinformation()">
+                </div>
+                
+            </div>
+
+            <div class="datatable displayerBoxes txt-center" style="overflow-x:auto;visibility:hidden">
+                <table class="Displaytable w3ls-table" width="100%">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Seats</th>
+                        <th>Seats</th>
+                        <th>Total Price</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea id="nameDisplay"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="NumberDisplay"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="seatsDisplay"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="seatsPrice"></textarea>
+                        </td>
+                        <td hidden>
+                            <textarea id="seatsName"></textarea>
+                        </td>
+                        <td hidden>
+                            <textarea id="Phonenumber"></textarea>
+                        </td>
+                        <td hidden>
+                            <textarea id="pricearray"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- //details after booking displayed here -->
+        </div>
+    </div>
+    
+    <!-- js -->
+    <script src="~/web/js/jquery-2.2.3.min.js"></script>
+    
+    <!-- //js -->
+    <!-- script for seat selection -->
+    <script>
+        var moviename = "@ViewBag.moviename";
+        var theartre;
+        var time;
+        var date;
+        var showid;
+        var allNameVals;
+        var allphoneno;
+        var seatprice;
+        var allprice;
+        var priceforall;
+        
+        $(function () {
+            ChooseTheartre();
+        });
+
+
+        function ChooseTheartre(){
+            $.ajax({
+                cache: false,
+               url: '@Url.Action("ChooseTheatre", "Booking")',
+
+                data: { moviename: moviename },
+                beforeSend: function () {
+
+                },
+                success: function (result) {
+                    if (result != null) {
+                        $("#theartre").empty();
+                        $("#theartre").append($('<option value=""> -- Choose -- </option>'));
+                        for (i = 0; i < result.length; i++) {
+                            $('#theartre').append($('<option value="' + result[i].theatrename + '">' + result[i].theatrename + '</option>>'));
+                        }
+                    }
+                },
+                complete: function () {
+
+                }
+            });
+        }
+        function ShowMovieTime() {
+
+             theartre = $('#theartre').val();
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("ChooseDate","Booking")',
+                data: { theartre: theartre, moviename: moviename },
+                beforeSend: function () {
+
+                },
+                success: function (data) {
+                    var detaillist = jQuery.parseJSON(JSON.stringify(data));
+                    var detailnum = detaillist.movietime.length;
+                    //alert(detailnum)
+                    if (data != null) {
+                       
+                        $("#mdate").empty();
+                        $("#mdate").append($('<option value=""> -- Choose -- </option>'));
+                       
+                        for (i = 0; i < detailnum; i++) {
+                            //alert(detaillist.movietime[i])
+                            $('#mdate').append($('<option value="' + detaillist.movietime[i] + '">' + detaillist.movietime[i] + '</option>>'));
+                        }
+                    }
+                },
+                complete: function () {
+
+                }
+            });
+        }
+
+        function ShowMoviedate()
+        {
+
+        theartre = $('#theartre').val();
+            $.ajax({
+                cache: false,
+                url: '@Url.Action("ChooseTime", "Booking")',
+                data: { theartre: theartre, moviename: moviename },
+                beforeSend: function () {
+                   
+                },
+                success: function (data) {
+                    var detaillist = jQuery.parseJSON(JSON.stringify(data));
+                    var detailnum = detaillist.movietime.length;
+                    //alert(detailnum)
+                    if (data != null) {
+                       
+                        $("#mtime").empty();
+                        $("#mtime").append($('<option value=""> -- Choose -- </option>'));
+                       
+                        for (i = 0; i < detailnum; i++) {
+                            //alert(detaillist.movietime[i])
+                            $('#mtime').append($('<option value="' + detaillist.movietime[i] + '">' + detaillist.movietime[i] + '</option>>'));
+                        }
+                    }
+                },
+                complete: function () {
+                    
+                    
+                }
+            });
+        }
+
+
+        function onLoaderFunc() {
+            $(".seatStructure *").prop("disabled", true);
+            $(".displayerBoxes *").prop("disabled", true);
+        }
+
+        function takeData()
+        {
+           
+            //if (($("#Username").val().length == 0) || ($("#Numseats").val().length == 0) || ($("#PhoneNumber").val().length == 0)) {
+            //if ($("#Numseats").val().length == 0)
+            //{
+            //    alert("Please Enter Number of Seats");
+            //    document.getElementsByClassName('seatStructure')[0].style.visibility = 'hidden';
+            //}
+
+            //else
+            //{
+            date = $('#mdate').val();
+            time = $('#mtime').val();
+            document.getElementsByClassName('seatcolor')[0].style.visibility = 'visible';
+            document.getElementsByClassName('seatStructure')[0].style.visibility = 'visible';
+            document.getElementsByClassName('datatable')[0].style.visibility = 'visible';
+                $(".inputForm *").prop("disabled", true);
+                $(".seatStructure *").prop("disabled", false);
+               
+                $.ajax({
+                    cache: false,
+                    url: '@Url.Action("SeatSelect","Booking")',
+                    data: { moviename: moviename, theartre: theartre, date: date, time: time },
+                    beforeSend: function () {
+
+                    },
+                    success: function (result) {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+
+
+                document.getElementById("notification").innerHTML =
+                    "<b style='margin-bottom:0px;background:#ff9800;letter-spacing:1px;'>Please Select your Seats NOW!</b>";
+            }
+        //}
+
+
+        function updateTextArea() {
+
+            //allseatprice.push($("input:checked").attr("data-valuetwo"));
+           
+            if ($("input:checked").length != 0) {
+              
+             // allNumberVals = $('#Numseats').val();
+             //$('#seatsBlock :checked').each(function () {
+             //       allSeatsVals.push($(this).val());
+             //   });
+
+             //   //Displaying
+               
+             //   $('#seatsDisplay').val(allSeatsVals);
+             //   $('#NumberDisplay').val(allNumberVals);
+             //   $('#seatsPrice').val(allseatprice);
+
+                 
+                 var allNumberVals = [];
+                var allSeatsVals = [];
+                var allsetaname = [];
+                var allseatprice = [];
+                //Storing in Array
+
+                allNumberVals.push($("input:checked").length);
+                $('#seatsBlock :checked').each(function () {
+                    allSeatsVals.push($(this).val());
+                });
+                //allseatprice.push($("input:checked").attr("data-valuetwo"));
+
+                 $('#seatsBlock :checked').each(function () {
+                    allseatprice.push($(this).attr("data-valuetwo"));
+                 });
+
+                 $('#seatsBlock :checked').each(function () {
+                    allsetaname.push($(this).attr("data-valuethree"));
+                 });
+                
+                //alert(allNumberVals)
+                //alert(allSeatsVals)
+              //  alert(allseatprice)
+               
+                var price = allseatprice.map(function(v) {
+                          return parseInt(v, 10);});
+
+                totalprice = price.reduce(function (acc, val) { return acc + val; }, 0)
+               
+                //Displaying
+               
+                $('#NumberDisplay').val(allNumberVals);
+                $('#seatsDisplay').val(allSeatsVals);
+                $('#seatsPrice').val(totalprice);
+                $('#seatsName').val(allsetaname);
+                $('#pricearray').val(allseatprice);
+               
+            }
+            else
+            {
+                alert("Please select " + ($("#Numseats").val()) + " seats")
+                $('#seatsDisplay').val('None');
+                $('#NumberDisplay').val(0);
+                $('#seatsPrice').val(0);
+            }
+        }
+
+        function userinformation()
+        {
+                allNameVals = $('#Username').val();
+                allphoneno = $('#PhoneNumber').val();
+           
+            $('#nameDisplay').val(allNameVals);
+            $('#Phonenumber').val(allphoneno);
+              
+        }
+        function orderconfirm()
+        {
+            
+            document.getElementsByClassName('StartSelect')[0].style.visibility = 'visible';
+            if (($("#Username").val().length == 0) || ($("#PhoneNumber").val().length == 0)) {
+                alert("Please Enter Your Name and PhoneNumber!");
+
+            }
+            else {
+                //alert($("#allNumberVals").val());
+                if ($("#NumberDisplay").val() == 0 || $("#NumberDisplay").val() == undefined ){
+                    alert("Please Choose Your Seat!")
+                }
+                else {
+                    seatprice = $('#pricearray').val();
+                    showid = $('#Showid').val();
+                    seatvalue = $('#seatsName').val();
+                    priceforall = $('#seatsPrice').val();
+                   // totalcount = $('#NumberDisplay').val();
+                    phoneno = $('#Phonenumber').val();
+              $.ajax({
+                    cache: false,
+                    url: '@Url.Action("UserBooking","Booking")',
+                    data: { name: allNameVals, phone: phoneno, seat: seatvalue,showid:showid ,amount:seatprice,totalprice:priceforall},
+                 
+                    beforeSend: function () {
+
+                    },
+                    success: function () {
+
+                    },
+                    complete: function () {
+
+                    }
+                 
+                });
+                }
+               
+            }
+             
+        }
+
+        function myFunction() {
+            alert($("input:checked").length);
+        }
+
+        
+
+        $(":checkbox").click(function () {
+            if ($("input:checked").length == ($("#Numseats").val())) {
+                $(":checkbox").prop('disabled', true);
+                $(':checked').prop('disabled', false);
+            } else {
+                $(":checkbox").prop('disabled', false);
+            }
+        });
+    </script>
+    <!-- //script for seat selection -->
+
+</body>
+
+</html>

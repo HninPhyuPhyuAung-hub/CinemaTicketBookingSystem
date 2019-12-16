@@ -1,0 +1,217 @@
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csc.exe
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\cinema.dll.config
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\cinema.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\cinema.pdb
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csc.exe.config
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csc.rsp
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csi.exe
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csi.exe.config
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\csi.rsp
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.AppContext.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Console.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.IO.Compression.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Claims.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.ValueTuple.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\vbc.exe
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\vbc.exe.config
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\vbc.rsp
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Antlr3.Runtime.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\EntityFramework.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\EntityFramework.SqlServer.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Newtonsoft.Json.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Owin.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\PagedList.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\PagedList.Mvc.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Helpers.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Mvc.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Optimization.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Razor.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.Razor.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\WebGrease.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\PagedList.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\PagedList.Mvc.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Helpers.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Mvc.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Optimization.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.Razor.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\System.Web.WebPages.Razor.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Newtonsoft.Json.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Antlr3.Runtime.pdb
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\EntityFramework.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\EntityFramework.SqlServer.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\obj\Debug\cinema.csprojAssemblyReference.cache
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\obj\Debug\cinema.csproj.CoreCompileInputs.cache
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\obj\Debug\cinema.csproj.CopyComplete
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\obj\Debug\cinema.dll
+C:\Users\Hnin Phyu Phyu Aung\cinema\cinema\obj\Debug\cinema.pdb
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\cinema.dll.config
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\cinema.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\cinema.pdb
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csc.exe
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csc.exe.config
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csc.rsp
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csi.exe
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csi.exe.config
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\csi.rsp
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.AppContext.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Console.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.IO.Compression.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.IO.Pipes.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Claims.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.ValueTuple.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Xml.XPath.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\vbc.exe
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\vbc.exe.config
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\vbc.rsp
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\VBCSCompiler.exe
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Antlr3.Runtime.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\EntityFramework.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\EntityFramework.SqlServer.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Newtonsoft.Json.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Owin.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\PagedList.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\PagedList.Mvc.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Helpers.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Mvc.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Optimization.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Razor.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.Deployment.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.Razor.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\WebGrease.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\PagedList.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\PagedList.Mvc.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Helpers.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Mvc.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Optimization.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.Razor.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.Deployment.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\System.Web.WebPages.Razor.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Newtonsoft.Json.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Antlr3.Runtime.pdb
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\EntityFramework.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\EntityFramework.SqlServer.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\obj\Debug\cinema.csproj.CopyComplete
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\obj\Debug\cinema.dll
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\obj\Debug\cinema.pdb
+C:\Users\HninPhyuPhyuAung\Desktop\cinema\cinema\obj\Debug\cinema.csprojAssemblyReference.cache

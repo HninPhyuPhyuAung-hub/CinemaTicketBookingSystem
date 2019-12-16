@@ -1,0 +1,110 @@
+﻿
+
+@model cinema.Models.MoviePaging
+@using PagedList;
+@using PagedList.Mvc;
+
+
+
+<div class="row">
+
+
+    @foreach (var item in Model.movieList)
+    {
+        <div class="col-md-4" id="card-@item.movieid">
+            <div class="custom-card">
+                <div class="text-center" style="padding-top:15px">
+                    <video width="320" height="240" controls autoplay="autoplay">
+                        <source src="@item.trailer" type="video/mp4">
+                    </video>
+                </div>
+                @if (item.moviename == null)
+                {
+                    <h4 class="text-center myanmar3font" style="padding-bottom:7px;">Unknown </h4>
+                }
+                else
+                {
+                    <h4 class="text-center myanmar3font" style="padding-bottom:7px;">@item.moviename </h4>
+                }
+                @if (item.showingevent == null)
+                {
+                    <h4 class="text-center myanmar3font" style="padding-bottom:7px;">Unknown </h4>
+                }
+                else
+                {
+                    <h4 class="text-center myanmar3font" style="padding-bottom:7px;">@item.showingevent </h4>
+                }
+                <div class="row" style="text-align:center">
+                    <a href="@Url.Action("Detail", "Cinema",new { movieid = @item.movieid })" class="btn btn-sm btn-info" style="padding-left:17px;padding-right:17px;">View Detail</a>
+                    <a href="@Url.Action("Addmoive", "Cinema",new { movieid = @item.movieid })" class="btn btn-sm btn-info" style="padding-left:17px;padding-right:17px;">Edit</a>
+                    <button type="button" class="btn btn-sm btn-info" style="padding-left:17px;padding-right:17px;" id="addreferrer-@item.movieid" onclick="DeleteMovie(this)" data-id="@item.movieid" title="Edit"> Delete</button>
+                    <br />
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+
+
+
+</div>
+<div class="">
+    <div class="pagedList" style="text-align:center">
+        @Html.PagedListPager(Model.movieList, page => Url.Action("MovieList", "Cinema",
+        new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+    </div>
+</div>
+
+
+<div class="modal fade slide-down" id="DeleteModel" aria-hidden="true" style="display:none;padding-right:1200px">
+    <div class="modal-dialog">
+        <div class="v-cell">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Confirm</h4>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to delete?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary" onclick="DelMovie()">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+
+    <script type="text/javascript">
+        var movieid;
+        function DeleteMovie(e) {
+            movieid = $(e).attr('data-id');
+            $('#DeleteModel').modal('show');
+        }
+        function DelMovie() {
+            $.ajax({
+                cahe: false,
+                url: '@Url.Action("Deletemovie","Cinema")',
+                data: { movieid: movieid },
+                beforeSend: function () {
+                    $('#DeleteModel').modal('hide');
+                },
+                success: function (mydata) {
+                    if (mydata == "Success")
+                        var id = $('#card-' + movieid);
+                  //  alert(id);
+                    $('#card-' + movieid).empty();
+                },
+                complete: function () {
+
+                }
+            });
+        }
+    </script>
+}
