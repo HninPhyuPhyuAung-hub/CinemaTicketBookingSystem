@@ -1,8 +1,6 @@
-﻿
-@{ Layout = null;}
+﻿@{ Layout = null;}
 <!DOCTYPE html>
 <html>
-
 <head>
     <!-- Title -->
     <title> &nbsp; Cinema Ticket Booking  </title>
@@ -11,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-
     <title>Home</title>
     <!-- Favicon -->
     <!-- Google Fonts -->
@@ -31,17 +28,13 @@
     <link rel="stylesheet" href="~/assets/vendor/hs-bg-video/hs-bg-video.css">
     <link href="~/assets/css/custom-front.css" rel="stylesheet" />
     <link href="~/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet" />
-
-
     <link href="~/Videojs/video-js.css" rel="stylesheet" />
 </head>
+
 @model cinema.Models.moviedetail
 <body>
     <link href="~/assets/css/custom-front.css" rel="stylesheet" />
-
     <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md u-header--untransitioned" data-header-fix-moment="500" data-header-fix-effect="slide">
-
-
         <div style="background-color:#000000">
             <div id="logoAndNav" class="container">
                 <!-- Nav -->
@@ -53,66 +46,31 @@
                     </button>
                     <div id="navBar" class="collapse navbar-collapse py-0">
                         <ul id="scrollNav" class="navbar-nav  u-header__navbar-nav" style="margin-top:-5px; font-size:18px;">
-
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1100px">
+                          <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1100px">
                                 <a href="@Url.Action("Index","Cinema")" id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#FFF">
                                     Home
                                     <span class="fa fa-angle-down u-header__nav-link-icon"></span>
                                 </a>
-
-                                <!-- Blog - Submenu -->
-                                <!-- End Submenu -->
                             </li>
-
-
-
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                           <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
                                 <a id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#fff">
                                     Login
                                     <span class="fa fa-user"></span>
                                 </a>
-
-
                             </li>
-
-
-
                         </ul>
                     </div>
-
                 </nav>
-
-                <!-- End Navigation -->
             </div>
         </div>
-
     </header>
 
-
-
-
     <div class="pyidaungsu">
-
-
-
         <main id="content" role="main">
-            <!-- End News Carousel -->
-
-
-
-
-
             <div class="position-relative u-bg-light-blue-50 custom_paragraph">
-                <div class="container u-space-1">
-                    <!-- Title -->
-                    <!-- End Title -->
+                <div class="container u-space-1">       
                     <div class="row">
-
-
-
                         <div class="col-lg-3 col-md-3 col-xs-12 col-sm-12">
-
-                            <!-- News Carousel -->
                             <div class="js-slick-carousel transition-3d-hover" data-slides-show="1" style="margin-top:-20px"
                                  data-autoplay="true"
                                  data-slides-scroll="1"
@@ -171,12 +129,7 @@
                                 <div class="col-1"><i class="fas fa-caret-right pr-1 mt-1"></i> </div>
                                 <div class="col-10"> <a href="#"> <span class="available-card">Rating: @Model.rating</span> </a><br /></div>
                             </div>
-
                         </div>
-
-
-
-
                     </div>
                     <br />
                 </div>
@@ -186,19 +139,12 @@
                 <!-- Title -->
                 <div class="w-md-80 w-lg-50 text-center mx-auto">
                     <a href="@Url.Action("BookMovie","Booking",new { @Model.movieid})" class="btn btn-primary" type="submit">Book Now</a>
-
-
                 </div>
-
             </div>
-
-
         </main>
-
-
-
     </div>
     }
+
     <footer class="footer_custom">
         <div class="container u-space-1-bottom">
             <div class="row justify-content-lg-between mb-7">
@@ -219,24 +165,15 @@
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
-                    <!-- Title -->
-                    <h3 class="h6 text-white">
+                   <h3 class="h6 text-white">
                         <strong>Contacts</strong>
                     </h3>
-                    <!-- End Title -->
-                    <!-- Address -->
                     <address class="u-list">
                         <span class="u-list__link text-white"><strong>Call us : </strong><br />+959 973 546 733</span>
                         <span class="u-list__link text-white"><strong>Email us : </strong><br /><span class="list-unstyled u-list u-list--white"><a href="#" class="u-list__link">hninphyuphyuaung70@gmail.com</a></span></span>
                         <span class="u-list__link text-white"><strong>Address : </strong><br />Yangon , Myanmar</span>
                     </address>
-                    <!-- End Address -->
                 </div>
-
-
-
-
-
 
                 <div class="col-sm-4 col-md-4 col-lg-5">
                     <div class="mb-4">
@@ -252,7 +189,6 @@
                             <div class="form-group">
                                 <input type="text" id="emailfooter" name="email" class="form-control" placeholder="Email:" autocomplete="off">
                             </div>
-
                             <div class="form-group">
                                 <textarea class="form-control" id="messagefooter" name="message" placeholder="Message:" rows="3" autocomplete="off"></textarea>
                             </div>
@@ -262,22 +198,18 @@
                             </div>
                         </div>
                         <!-- End Input -->
-
                     </div>
-                    <ul class="list-inline mb-0">
 
+                    <ul class="list-inline mb-0">
                         <li class="list-inline-item">
                             <a class="u-bg-transparent u-icon u-icon--sm u-icon-light--air" href="#">
                                 <span class="fab fa-google u-icon__inner" style="font-size:1.3em"></span>
                             </a>
                         </li>
-
                     </ul>
-                    <!-- End Social Networks -->
                 </div>
             </div>
             <hr />
-
         </div>
     </footer>
 
@@ -312,10 +244,6 @@
     <script src="~/assets/js/components/hs.show-animation.js"></script>
     <script src="~/assets/js/components/hs.go-to.js"></script>
     <!-- JS Implementing Plugins -->
-
-
-
-
     <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
     <script>
         $(document).on('ready', function () {
@@ -327,8 +255,6 @@
     <!-- JS Implementing Plugins -->
     <script src="/assets/js/components/hs.video-player.js"></script>
     <!-- JS Plugins Init. -->
-
-
 
     <script>
         $(function () {

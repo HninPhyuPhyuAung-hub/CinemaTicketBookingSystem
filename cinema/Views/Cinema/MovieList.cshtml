@@ -1,14 +1,7 @@
-﻿
-
-@model cinema.Models.MoviePaging
+﻿@model cinema.Models.MoviePaging
 @using PagedList;
 @using PagedList.Mvc;
-
-
-
 <div class="row">
-
-
     @foreach (var item in Model.movieList)
     {
         <div class="col-md-4" id="card-@item.movieid">

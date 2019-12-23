@@ -7157,7 +7157,6 @@
     <Content Include="Views\Cinema\Index.cshtml" />
     <Content Include="Views\Cinema\Addmoive.cshtml" />
     <Content Include="Views\Cinema\MovieList.cshtml" />
-    <Content Include="Views\Cinema\Addseat.cshtml" />
     <Content Include="Views\Cinema\AddTheatre.cshtml" />
     <Content Include="Views\Cinema\EditTheartre.cshtml" />
     <Content Include="web\fonts\fontawesome-webfont.eot" />
@@ -7166,14 +7165,9 @@
     <Content Include="web\fonts\fontawesome-webfont.woff2" />
     <Content Include="web\fonts\FontAwesome.otf" />
     <Content Include="Views\Showingtime\AddShowingTime.cshtml" />
-    <Content Include="Views\Cinema\Test.cshtml" />
-    <Content Include="Views\Cinema\TestView.cshtml" />
     <Content Include="Views\Cinema\ViewDetail.cshtml" />
     <Content Include="Views\Booking\BookMovie.cshtml" />
-    <Content Include="Views\Cinema\developertest.cshtml" />
-    <Content Include="Views\Booking\aa.cshtml" />
     <Content Include="Views\Booking\UserBooking.cshtml" />
-    <Content Include="Views\Cinema\Browsemovie.cshtml" />
     <Content Include="Views\UserLogin\Login.cshtml" />
     <Content Include="Views\Booking\BookingResult.cshtml" />
   </ItemGroup>

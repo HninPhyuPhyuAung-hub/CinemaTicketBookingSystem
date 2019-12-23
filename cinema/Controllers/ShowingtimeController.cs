@@ -15,22 +15,19 @@ namespace cinema.Controllers
         {
             return View();
         }
+
         public ActionResult getmoviename()
         {
             cinemacontext context = new cinemacontext();
             List<SelectListItem> droplist = new List<SelectListItem>();
-
-            string[] mname = context.movieset
-                                               .Select(e => e.moviename)
-
-                                               .ToArray();
+            string[] mname = context.movieset.Select(e => e.moviename).ToArray();
             foreach (var item in mname)
             {
                 droplist.Add(new SelectListItem { Text = item, Value = item });
             }
-
             return Json(droplist, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult gettheatrename()
         {
             cinemacontext context = new cinemacontext();
@@ -39,10 +36,10 @@ namespace cinema.Controllers
             foreach (var item in tname)
             {
                 droplist.Add(new SelectListItem { Text = item, Value = item });
-
             }
             return Json(droplist, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult addshowtime(showingtime s )
         {
             showingtimeRepository srepo = new showingtimeRepository();
@@ -56,12 +53,14 @@ namespace cinema.Controllers
             }
             return RedirectToAction("AddShowingTime", "Showingtime");
         }
+
         public ActionResult ShowingTimeList()
         {
             cinemacontext context = new cinemacontext();
             var result = context.showingtimeset.ToList().OrderByDescending(a => a.theatrename);
             return Json(new { data = result }, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult EditShowingTime(int? showid)
         {
             cinemacontext context = new cinemacontext();
@@ -70,11 +69,8 @@ namespace cinema.Controllers
                 {
 
                 result = context.showingtimeset.Where(a => a.showid == showid).ToArray();
-            }
-            
-          
+                }     
             return Json(result, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

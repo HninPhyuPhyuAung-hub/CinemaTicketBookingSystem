@@ -19,9 +19,7 @@ namespace cinema.Controllers
             cinemacontext context = new cinemacontext();
             var moviename = context.movieset.Where(a => a.movieid == movieid).Select(a => a.moviename).FirstOrDefault();
             ViewBag.moviename = moviename;
-            var vm = new ListViewModel();
-            //vm.theatredata = context.Theatreset.Where(a => a.therartname == "Theatre1").ToArray();
-            ///vm.temporarydata = context.Temporarydataset.Where(a => a.showid == 1).ToArray();
+            var vm = new ListViewModel();     
             List<seatselect> result = new List<seatselect>();
             vm.seatselection = (from prsn in context.Theatreset
                                 from co in context.Temporarydataset.Where(co => co.seatname == prsn.seatname && co.showid == 2).DefaultIfEmpty()
@@ -35,10 +33,10 @@ namespace cinema.Controllers
                                 }).ToArray();
             return View(vm);
         }
+
         public ActionResult ChooseTheatre(string moviename)
         {
             cinemacontext context = new cinemacontext();
-     
             var result = context.showingtimeset.Where(a => a.moviename == moviename).GroupBy(a => new { a.theatrename }).
                 Select(g => new
                 {
@@ -47,16 +45,16 @@ namespace cinema.Controllers
                 ).ToList();
             return Json(result, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult ChooseDate(string theartre,string moviename)
         {
             cinemacontext context = new cinemacontext();
-           
             var result = context.showingtimeset.Where(a => a.theatrename == theartre && a.moviename == moviename).ToList();
             movietimejson data = new movietimejson();
-            data.movietime = result.Select(a => a.time.Value.ToString("MMMM dd/ yyyy")).Distinct().ToArray();
-            
+            data.movietime = result.Select(a => a.time.Value.ToString("MMMM dd/ yyyy")).Distinct().ToArray(); 
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult ChooseTime(string theartre, string moviename)
         {
             cinemacontext context = new cinemacontext();
@@ -65,22 +63,14 @@ namespace cinema.Controllers
             data.movietime = result.Select(a => a.time.Value.ToString("HH:MM")).Distinct().ToArray();
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult SeatSelect(string moviename,string theartre,string date,string time)
         {
             cinemacontext context = new cinemacontext();
-
-      
             DateTime d1 = Convert.ToDateTime(date);
             DateTime d2 = Convert.ToDateTime(time);
             var showid = context.showingtimeset.Where(a => DbFunctions.TruncateTime(a.time) == DbFunctions.TruncateTime(d1) && a.time.Value.Hour == d2.Hour && a.time.Value.Minute == d2.Minute && a.theatrename==theartre &&a.moviename==moviename).Select(e => e.showid).FirstOrDefault();
-            
-            
-       
-            
             var vm = new ListViewModel();
-            //vm.theatredata = context.Theatreset.Where(e => e.therartname == theartre).ToArray();
-            //vm.temporarydata = context.Temporarydataset.Where(e => e.showid == showid).ToArray();
-
             vm.seatselection = (from prsn in context.Theatreset
                                 from co in context.bookingset.Where(co => co.seat == prsn.seatname && co.showid == showid).DefaultIfEmpty()
                                 where prsn.therartname == theartre
@@ -92,12 +82,9 @@ namespace cinema.Controllers
                                     price=prsn.seatprice
 
                                 }).ToArray();
-
-
             return View("BookMovie",vm);
-
-
         }
+
         public ActionResult UserBooking(string name, string phone, string seat, int? showid,string amount,int totalprice)
         {
             BookingRepository bb = new BookingRepository();
@@ -129,7 +116,6 @@ namespace cinema.Controllers
                 book.bookingtime = DateTime.UtcNow;
                 bb.Add(book);
             }
-           
             var result = (from c in context.showingtimeset
                                where c.showid == showid
                                select new TicketDetail
@@ -143,10 +129,8 @@ namespace cinema.Controllers
                                    price= totalprice
                                 
                                }).ToList() ;
-           
             return View(result);
         }
-
         public ActionResult BookingResult()
         {
             return View();

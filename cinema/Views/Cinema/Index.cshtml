@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-
     <title>Home</title>
     <!-- Favicon -->
     <!-- Google Fonts -->
@@ -29,16 +28,12 @@
     <link rel="stylesheet" href="~/assets/vendor/hs-bg-video/hs-bg-video.css">
     <link href="~/assets/css/custom-front.css" rel="stylesheet" />
     <link href="~/assets/vendor/fancybox/jquery.fancybox.css" rel="stylesheet" />
-
-
     <link href="~/Videojs/video-js.css" rel="stylesheet" />
 </head>
+
 <body>
     <link href="~/assets/css/custom-front.css" rel="stylesheet" />
-
     <header id="header" class="u-header u-header--abs-top-md u-header--show-hide-md u-header--untransitioned" data-header-fix-moment="500" data-header-fix-effect="slide">
-
-
         <div style="background-color:#000000">
             <div id="logoAndNav" class="container">
                 <!-- Nav -->
@@ -50,26 +45,19 @@
                     </button>
                     <div id="navBar" class="collapse navbar-collapse py-0">
                         <ul id="scrollNav" class="navbar-nav  u-header__navbar-nav" style="margin-top:-5px; font-size:18px;">
-                            
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1000px">
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" style="padding-left:1000px">
                                 <a href="@Url.Action("Index","Cinema")" id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#FFF">
                                     Home
                                     <span class="fa fa-angle-down u-header__nav-link-icon"></span>
                                 </a>
-
-                                <!-- Blog - Submenu -->
-                                <!-- End Submenu -->
                             </li>
 
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
                                 <a id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#FFF">
                                     Movies
                                     <span class="fa fa-angle-down u-header__nav-link-icon"></span>
                                 </a>
-
-                                <!-- Blog - Submenu -->
-                                <ul id="blogSubMenu" class="list-inline hs-sub-menu u-header__sub-menu py-3 mb-0 animated fadeOut" style="min-width: 220px; display: none;" aria-labelledby="blogMegaMenu">
-                                    <!-- Classic -->
+                                <ul id="blogSubMenu" class="list-inline hs-sub-menu u-header__sub-menu py-3 mb-0 animated fadeOut" style="min-width: 220px; display: none;" aria-labelledby="blogMegaMenu">                    
                                     @foreach (var item in Model)
                                     {
                                         <li class="dropdown-item hs-has-sub-menu">
@@ -79,50 +67,34 @@
                                         </li>
                                     }
 
-                                </ul>
-                                <!-- End Submenu -->
-                            </li>
+                                </ul>                            
+                        </li>
 
-                            <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
+                        <li class="nav-item hs-has-sub-menu u-header__nav-item hs-sub-menu-opened" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut">
                                 <a  href="@Url.Action("Login","UserLogin")" id="blogMegaMenu" class="nav-link u-header__nav-link" aria-haspopup="true" aria-expanded="false" aria-labelledby="blogSubMenu" style="color:#fff">
                                     Login
                                     <span class="fa fa-user"></span>
                                 </a>
-
-                              
-                            </li>
-
-
+                        </li>
 
                         </ul>
                     </div>
-                 
                 </nav>
-
-                <!-- End Navigation -->
             </div>
         </div>
-
     </header>
-
 
     <a id="skippy" class="sr-only sr-only-focusable u-skippy" href="#content">
         <div class="container">
             <span class="u-skiplink-text">Skip to main content</span>
         </div>
     </a>
+
     <div class="pyidaungsu">
-
-
-
         <main id="content" role="main">
             <!-- End News Carousel -->
-
-
             <br />
-
-
-            <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3" data-slides-show="1"
+           <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3" data-slides-show="1"
                  data-slides-scroll="1"
                  data-autoplay="true"
                  data-arrows-classes="d-none d-lg-inline-block u-slick__arrow u-slick__arrow--offset u-slick__arrow-centered--y rounded-circle"
@@ -150,37 +122,18 @@
 
                     <div class="js-slide u-bg-img-hero u-gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4 slick-slide slick-active"
                          style="background-image: url(@item.moviephotho); width: 327px; height: auto;" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
-
-                        @*<span class="u-header__banner-v2-title" style="color:black;">@item.movie2D</span>*@
                         <article class="align-self-end w-100 text-center p-7">
-
-                            <div class="mt-9"></div>
+                        <div class="mt-9"></div>
                             <div class="mt-2">
                                 <h6 class="font-weight-normal text-white">
                                     <br />
                                     <br /><br /><br /><br /><br />
                                   <br /><br /><br />
-                                    <br />
-                                    
-
-                                </h6>
-                                
-
+                                    <br /> </h6>
                             </div>
-
                         </article>
-
-
                     </div>
-                    <!-- End Blog News -->
-                    <!-- Blog News -->
-
-
-
-                }
-
-
-                <br />
+                }   <br />
                 <!-- End Blog News -->
             </div>
 
@@ -189,12 +142,10 @@
                 <div class="w-md-80 w-lg-50 text-center mx-auto">
                     <a href="@Url.Action("Index","Cinema",new { showingtime="NowShowing"})" class="btn btn-primary" type="submit">Now Showing</a>
                     <a href="@Url.Action("Index","Cinema",new { showingtime="ComingSoon"})" class="btn btn-primary" type="submit">Comming Soon</a>
-
                 </div>
                 <!-- End Title -->
                 <!-- News Carousel -->
                 @model IList<cinema.Models.moviedetail>
-
                 <div class="js-slick-carousel u-slick u-slick--equal-height u-slick--gutters-3" data-slides-show="4"
                      data-slides-scroll="1"
                      data-autoplay="true"
@@ -216,18 +167,13 @@
                      "settings" : {
                      "slidesToShow" : 1
                      }
-
-         }]'>
+                     }]'>
                     @foreach (var item in Model)
                     {
-
-                        <div class="js-slide u-bg-img-hero u-gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4 slick-slide slick-active"
+                    <div class="js-slide u-bg-img-hero u-gradient-overlay-half-dark-v1 transition-3d-hover rounded-pseudo my-4 slick-slide slick-active"
                              style="background-image: url(@item.moviephotho); width: 327px; height: auto;" data-slick-index="2" aria-hidden="false" tabindex="0" role="tabpanel" id="slick-slide02" aria-describedby="slick-slide-control02">
-
-                            @*<span class="u-header__banner-v2-title" style="color:black;">@item.movie2D</span>*@
                             <article class="align-self-end w-100 text-center p-7">
-
-                                <div class="mt-9"></div>
+                             <div class="mt-9"></div>
                                 <div class="mt-2">
                                     <h6 class="font-weight-normal text-white">
                                         <br />
@@ -236,36 +182,17 @@
                                         @item.movie2D
                                         <br />
                                         Rating: @item.rating
-
                                     </h6>
                                     <a class="btn btn-sm btn btn-primary u-btn-wide transition-3d-hover" tabindex="0" href="@Url.Action("ViewDetail","Cinema",new { movieid=item.movieid})">View Trailer</a><br /><br />
                                     <a class="btn btn-sm btn btn-primary u-btn-wide transition-3d-hover" tabindex="0" href="@Url.Action("BookMovie","Booking",new { movieid=item.movieid})">Book</a>
-
                                 </div>
-
                             </article>
-
-
-                        </div>
-                        <!-- End Blog News -->
-                        <!-- Blog News -->
-
-
-
+                        </div>         
                     }
-
-
-                    <br />
-                    <!-- End Blog News -->
+                    <br /> 
                 </div>
-                <!-- End News Carousel -->
             </div>
-
-
         </main>
-
-
-
     </div>
 
     <footer class="footer_custom">
@@ -281,31 +208,21 @@
                     <ul class="list-unstyled u-list u-list--white">
                         <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="NowShowing" })">Now Showing</a></li>
                         <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema",new {showingtime="ComingSoon" })">Comming Soon</a></li>
-                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema")">All Moives</a></li>
-                       
+                        <li><a class="u-list__link" href="@Url.Action("Browsemovie","Cinema")">All Moives</a></li>    
                     </ul>
                     <!-- End List -->
                 </div>
 
                 <div class="col-sm-4 col-md-4 col-lg-2 mb-7 mb-lg-0">
-                    <!-- Title -->
                     <h3 class="h6 text-white">
                         <strong>Contacts</strong>
-                    </h3>
-                    <!-- End Title -->
-                    <!-- Address -->
+                    </h3> 
                     <address class="u-list">
                         <span class="u-list__link text-white"><strong>Call us : </strong><br />+959 973 546 733</span>
                         <span class="u-list__link text-white"><strong>Email us : </strong><br /><span class="list-unstyled u-list u-list--white"><a href="#" class="u-list__link">hninphyuphyuaung70@gmail.com</a></span></span>
                         <span class="u-list__link text-white"><strong>Address : </strong><br />Yangon , Myanmar</span>
-                    </address>
-                    <!-- End Address -->
+                    </address>     
                 </div>
-
-
-                
-
-
 
                 <div class="col-sm-4 col-md-4 col-lg-5">
                     <div class="mb-4">
@@ -321,7 +238,6 @@
                             <div class="form-group">
                                 <input type="text" id="emailfooter" name="email" class="form-control" placeholder="Email:" autocomplete="off">
                             </div>
-
                             <div class="form-group">
                                 <textarea class="form-control" id="messagefooter" name="message" placeholder="Message:" rows="3" autocomplete="off"></textarea>
                             </div>
@@ -330,23 +246,18 @@
                                 <span id="sentsuccessfully" style="color:#ffffff" class="float-right" hidden>Your message was sent successfully !</span>
                             </div>
                         </div>
-                        <!-- End Input -->
-
                     </div>
+
                     <ul class="list-inline mb-0">
-                       
-                        <li class="list-inline-item">
+                          <li class="list-inline-item">
                             <a class="u-bg-transparent u-icon u-icon--sm u-icon-light--air" href="#">
                                 <span class="fab fa-google u-icon__inner" style="font-size:1.3em"></span>
                             </a>
                         </li>
-
                     </ul>
-                    <!-- End Social Networks -->
                 </div>
             </div>
-            <hr />
-            
+            <hr />   
         </div>
     </footer>
 
@@ -354,7 +265,6 @@
        data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">
         <span class="fa fa-arrow-up u-go-to__inner"></span>
     </a>
-
 
     <script src="~/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="~/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
@@ -382,10 +292,6 @@
     <script src="~/assets/js/components/hs.go-to.js"></script>
     <!-- JS Implementing Plugins -->
 
-
-
-    
-
     <script src="/assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
     <script>
         $(document).on('ready', function () {
@@ -393,17 +299,15 @@
             $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
         });
     </script>
+
     <!-- JS Plugins Init. -->
     <!-- JS Implementing Plugins -->
     <script src="/assets/js/components/hs.video-player.js"></script>
     <!-- JS Plugins Init. -->
-    
-    
-    
+   
     <script>
       $(function () {
             $.fn.SendEmail = function (Name, Email, Message) {
-
                 $.ajax({
                     url: '/Cinema/ReceiveMessage',
                     dataType: "json",

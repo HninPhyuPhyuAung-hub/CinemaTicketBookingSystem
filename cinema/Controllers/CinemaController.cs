@@ -17,10 +17,9 @@ namespace cinema.Controllers
         {
             cinemacontext context = new cinemacontext();
             moviedetail[] movielist = context.movieset.Where(a => a.showingevent == showingtime).ToArray();
-           
             return View(movielist);
-
         }
+
         public ActionResult Comingdata(string showingtime = "")
         {
             cinemacontext context = new cinemacontext();
@@ -28,8 +27,8 @@ namespace cinema.Controllers
             ViewBag.Message = showingtime;
             return View("Index", movielist);
         }
-        public ActionResult Addmoive(int? movieid)
 
+        public ActionResult Addmoive(int? movieid)
         {
             cinemacontext context = new cinemacontext();
             moviedetail result = context.movieset.Where(a => a.movieid == movieid).FirstOrDefault();
@@ -42,24 +41,20 @@ namespace cinema.Controllers
                 return View();
             }
         }
+
         [HttpPost]
         public ActionResult Addmoive(moviedetail m, HttpPostedFileBase image, HttpPostedFileBase movie)
         {
             cinemacontext context = new cinemacontext();
             if (movie != null)
             {
-
                 movie.SaveAs(Path.Combine(Server.MapPath("~/Video"), movie.FileName));
                 m.trailer = "~/Video/" + movie.FileName;
             }
-
-
             if (image != null)
             {
-                image.SaveAs(HttpContext.Server.MapPath("~/Image/")
-                                                      + image.FileName);
+                image.SaveAs(HttpContext.Server.MapPath("~/Image/")+ image.FileName);
                 m.moviephotho = "~/Image/" + image.FileName;
-
             }
             m.moviephotho = m.moviephotho.Replace("~", string.Empty);
             m.trailer = m.trailer.Replace("~", string.Empty);
@@ -67,18 +62,16 @@ namespace cinema.Controllers
             {
                 movieRepository movrepo = new movieRepository();
                 movrepo.Update(m);
-
             }
             else
             {
                 context.movieset.Add(m);
             }
-
             context.SaveChanges();
             ModelState.Clear();
             return RedirectToAction("MovieList", "Cinema");
-
         }
+
         public ActionResult MovieList(int page = 1, int pagesize = 10)
         {
             cinemacontext context = new cinemacontext();
@@ -91,8 +84,8 @@ namespace cinema.Controllers
             model.TotalCount = totalcount;
             model.TotalPages = totalpage;
             return View(model);
-
         }
+
         public ActionResult Deletemovie(int movieid)
         {
             cinemacontext context = new cinemacontext();
@@ -100,6 +93,7 @@ namespace cinema.Controllers
             context.Database.ExecuteSqlCommand(sqlquery);
             return Json("Success", JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult UpdateSeatPrice(FormCollection fc)
         {
             cinemacontext context = new cinemacontext();
@@ -114,13 +108,12 @@ namespace cinema.Controllers
                 seat = stringList[i];
                 int result = context.Theatreset.Where(a => a.seatname == seat && a.therartname == theatrename).Select(a => a.theatreid).FirstOrDefault();
                 var sqlquery = String.Format("Update Theatredetail SET seatprice={0} WHERE theatreid={1}", seatprice, result);
-
                 context.Database.ExecuteSqlCommand(sqlquery);
-
             }
             ViewBag.Message = "Successfully Updated Price!";
             return RedirectToAction("EditTheartre", "Cinema");
         }
+
         public ActionResult Addseat(FormCollection fc)
         {
             cinemacontext context = new cinemacontext();
@@ -135,8 +128,6 @@ namespace cinema.Controllers
             Double pprice = Convert.ToDouble(platprice);
             Double gprice = Convert.ToDouble(goldprice);
             Theatredetail m = new Theatredetail();
-
-
             for (int i = 1; i <= scount; i++)
             {
                 var result = "";
@@ -153,16 +144,13 @@ namespace cinema.Controllers
                 {
                     result = "C" + Convert.ToString(i - 40);
                 }
-
                 m.therartname = theatrename;
                 m.seattype = "Silver";
                 m.seatprice = sprice;
                 m.seatname = result;
                 context.Theatreset.Add(m);
                 context.SaveChanges();
-
             }
-
             for (int j = 1; j <= pcount; j++)
             {
                 var result = "";
@@ -184,7 +172,6 @@ namespace cinema.Controllers
                 m.seatname = result;
                 context.Theatreset.Add(m);
                 context.SaveChanges();
-
             }
             for (int k = 1; k <= gcount; k++)
             {
@@ -201,15 +188,12 @@ namespace cinema.Controllers
                 {
                     result = "H" + Convert.ToString(k - 40);
                 }
-
-
                 m.therartname = theatrename;
                 m.seattype = "Gold";
                 m.seatprice = gprice;
                 m.seatname = result;
                 context.Theatreset.Add(m);
                 context.SaveChanges();
-
             }
             return RedirectToAction("AddTheatre", "Cinema");
         }
@@ -217,21 +201,19 @@ namespace cinema.Controllers
         public ActionResult SeatList(string theatrename)
         {
             cinemacontext context = new cinemacontext();
-
             Theatredetail[] result = context.Theatreset.Where(a => a.therartname == theatrename).ToArray();
             ViewBag.data = "a";
             return View("EdtiTheartre", result);
-
         }
 
         public ActionResult AddTheatre()
         {
             return View();
         }
+
         public ActionResult TheartreList()
         {
             cinemacontext context = new cinemacontext();
-
             var result = context.Theatreset.GroupBy(a => new { a.therartname, a.seattype })
                        .Select(g => new
                        {
@@ -243,28 +225,23 @@ namespace cinema.Controllers
                        }).ToList();
             return Json(new { data = result }, JsonRequestBehavior.AllowGet);
         }
-        public ActionResult EditTheartre(string theatrename = "Theatre1")
 
+        public ActionResult EditTheartre(string theatrename = "Theatre1")
         {
             cinemacontext context = new cinemacontext();
-
             Theatredetail[] result = context.Theatreset.Where(a => a.therartname == theatrename).ToArray();
-
             return View(result);
-
         }
+
         public ActionResult getTheartre()
         {
             cinemacontext context = new cinemacontext();
             var result = context.Theatreset.Select(a => a.therartname).Distinct().ToList();
             List<SelectListItem> droplist = new List<SelectListItem>();
-
-
             foreach (var item in result)
             {
                 droplist.Add(new SelectListItem { Text = item, Value = item });
             }
-
             return Json(droplist, JsonRequestBehavior.AllowGet);
         }
        
@@ -278,11 +255,8 @@ namespace cinema.Controllers
         public ActionResult Browsemovie(string showingtime,int page=1,int pagesize=10)
         {
             cinemacontext context = new cinemacontext();
-          //  List<moviedetail> movielist = new List<moviedetail>();
             var model = new MoviePaging();
             moviedetail[] movielist = new moviedetail[0];
-           
-           
             if (showingtime==null)
             {
                movielist = context.movieset.ToArray();
@@ -298,8 +272,8 @@ namespace cinema.Controllers
             model.TotalCount = totalcount;
             model.TotalPages = totalpage;
             return View(model);
-
         }
+
         public ActionResult ReceiveMessage(string Name,string Email,string Message)
         {
             ReceiveMessage rm = new ReceiveMessage();
@@ -309,7 +283,6 @@ namespace cinema.Controllers
             rm.Message = Message;
             rmrepo.Add(rm);
             return Json("Success", JsonRequestBehavior.AllowGet);
-
         }
     }
 }

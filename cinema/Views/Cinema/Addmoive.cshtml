@@ -1,21 +1,16 @@
 ﻿@model cinema.Models.moviedetail
-
 @{
     ViewBag.Title = "Addmoive";
 }
-
-
 
 @using (Html.BeginForm("Addmoive", "Cinema", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     @Html.HiddenFor(Model=>Model.movieid)
-   
     <div class="col-md-4"></div>
     <div class="col-md-8">
         <h2>Add Moive</h2>
         <div class="form-horizontal">
-
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
@@ -33,6 +28,7 @@
                     @Html.ValidationMessageFor(model => model.moviedescription, "", new { @class = "text-danger" })
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-md-2"><label>Movie Type</label></div>
                 <div class="col-md-10">
@@ -59,55 +55,46 @@
                     @Html.DropDownListFor(model => model.movietype, movieaction, new { @class = "form-control", name = "select", id = "movieaction" })
                 </div>
             </div>
-            <div class="form-group">
 
-                <div class="col-md-2"><label>Movie Actor</label></div>
+            <div class="form-group">
+            <div class="col-md-2"><label>Movie Actor</label></div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.actor, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.actor, "", new { @class = "text-danger" })
                 </div>
             </div>
-            <div class="form-group">
 
-                <div class="col-md-2"><label>Movie Time</label></div>
+            <div class="form-group">
+            <div class="col-md-2"><label>Movie Time</label></div>
                 <div class="col-md-10">
                     <input type="time" name="movietime" class="form-control datepicker" placeholder="Choose Hour" id="movietime" value="" onchange="get_date(this.value);">
                 </div>
             </div>
-            <div class="form-group">
 
-                <div class="col-md-2"><label>Movie Director</label></div>
+            <div class="form-group">
+            <div class="col-md-2"><label>Movie Director</label></div>
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.director, new { htmlAttributes = new { @class = "form-control" } })
                     @Html.ValidationMessageFor(model => model.director, "", new { @class = "text-danger" })
                 </div>
             </div>
 
-
-
             <div class="form-group">
                 <div class="col-md-2"><label>Movie Photo</label></div>
-
                 <div class="col-md-10">
-
-
                     <p>  <img id="image" height="120px" width="150px" style="border-radius:70%;width:35%" src="~/Image/photo_placeholder.png" /></p>
-
                     <p> <input type="file" name="image" accept="image/*" onchange="preview_image(event)" /></p>
                 </div>
                 @Html.HiddenFor(a => a.moviephotho, new { id = "hphoto" })
             </div>
 
-
             <div class="form-group">
                 <div class="col-md-2"><label>Movie Trailer</label></div>
                 <div class="col-md-10">
-
                     <p> <input type="file" name="movie" accept="video/*" /></p>
                 </div>
                 @Html.HiddenFor(a => a.trailer, new { id = "htralier" })
             </div>
-
 
             <div class="form-group">
                 <div class="col-md-2"><label>2D or 3D?</label></div>
@@ -122,12 +109,14 @@
                     @Html.DropDownListFor(model => model.movie2D, movietype, new { @class = "form-control", name = "select", id = "movietype" })
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-md-2"><label>Rating</label></div>
                 <div class="col-md-10">
                     <input type="text" class="form-control" name="rating" id="rating" />
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-md-2"><label>Showing Event</label></div>
                 <div class="col-md-10">

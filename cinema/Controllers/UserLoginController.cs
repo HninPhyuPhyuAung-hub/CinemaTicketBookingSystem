@@ -15,6 +15,7 @@ namespace cinema.Controllers
         {
             return View();
         }
+
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel login)
@@ -44,8 +45,8 @@ namespace cinema.Controllers
             }
             return View();
         }
-      public void SetCookie(string CookieName,int Id,string Username,string Email,string PhoneNo,string Role)
 
+      public void SetCookie(string CookieName,int Id,string Username,string Email,string PhoneNo,string Role)
         {
             HttpCookie myCookie = HttpContext.Request.Cookies[CookieName] ?? new HttpCookie(CookieName);
             myCookie.Values["Id"] = Id.ToString();
@@ -56,6 +57,7 @@ namespace cinema.Controllers
             myCookie.Expires = DateTime.Now.AddDays(30);
             HttpContext.Response.Cookies.Add(myCookie);
         }
+
         public ActionResult LogOut()
         {
             FormsAuthentication.SignOut();
@@ -64,6 +66,7 @@ namespace cinema.Controllers
             Session.Clear();
             return RedirectToAction("Login", "UserLogin");
         }
+
         public Boolean RemoveCookie(string Cookiename)
         {
             if(HttpContext.Request.Cookies[Cookiename]!=null)

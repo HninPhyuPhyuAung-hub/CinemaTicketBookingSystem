@@ -1,45 +1,30 @@
-﻿@*@section css{
-    <link href="~/Content/custom.css" rel="stylesheet" />
-
-}*@
-
-<div class="custom-card">
+﻿<div class="custom-card">
     <div class="row">
         <div class="col-md-offset-0">
-
             <span class="v-bottom" style="font-size:18px;font-weight:500;color:#428af5; padding-right:1100px;">
                 <h1>Movie Showing Time List</h1>
             </span>
-
-
             <button id="addseat" type="button" class="btn btn-primary btn-sm btn-rounded btnmain" style="background-color:#0000ff;border-color:#47d147;border-color:black" onclick="EditShowingTime()" title="Add New"><i class="fa fa-plus"></i> Add New Showing Time</button>
-
-
         </div>
     </div>
     <br />
     <div class="container-fluid">
         <table id="showingtime" class="table table-bordered table-striped table-hover" width="100%">
             <thead>
-
                 <tr>
-
                     <th>Thearter Name</th>
                     <th>Movie Name</th>
                     <th>Showing Time</th>
                     <th></th>
                     <th>Edit</th>
                     <th>Delete</th>
-
-
-
-
                 </tr>
             </thead>
             <tbody></tbody>
         </table>
     </div>
 </div>
+
 <div class="modal fade slide-down" id="DeleteAwardModel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="v-cell">
@@ -68,52 +53,39 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <br />
-
             @model cinema.Models.showingtime
             <div class="modal-body" id="modalBodySample">
                 @using (Html.BeginForm("addshowtime", "Showingtime", FormMethod.Post, new { @id = "SOFORM" }))
                 {
                     @Html.AntiForgeryToken()
                     <div class="row">
-
                         <div class="form-group">
                             <div class="col-md-3"><label>Movie Name</label></div>
                             <div class="col-md-9">
-
                                 @{
                                     var mname = new List<SelectListItem>()
                                     {
 
                                     };
                                 }
-
                                 <select name="moviename" class="form-control statehidden" id="mname" value="mname"></select>
-
                             </div>
                         </div>
                     </div>
 
-
-
-
                     <div class="row">
-
                         <div class="form-group">
                             <div class="col-md-3"><label>Theatre Name</label></div>
                             <div class="col-md-9">
-
                                 @{
                                     var tname = new List<SelectListItem>()
                                     {
 
                                     };
                                 }
-
                                 <select name="theatrename" class="form-control statehidden" id="tname" value="tname"></select>
-
                             </div>
                         </div>
-
                     </div>
 
                     <div class="row">
@@ -122,23 +94,14 @@
                             <div class="col-md-9">
                                 @*<input type="datetime-local" name="end-time" id="end-time" class="form-control">*@
                                 @Html.TextBoxFor(model => model.time, "{0:yyyy-MM-dd HH:mm}", new { @id = "time", @type = "datetime-local", @class = "form-control" })
-
-
-
                             </div>
                         </div>
-
                     </div>
-                    
-
-
+               
                     <div class=" form-group text-center">
                         <button class="btn btn-primary mt-2 w-50" style="" type="submit">Submit</button>
                     </div>
                     <input type="hidden" name="showid" value="0" id="showid" />
-
-
-
                 }
             </div>
         </div>
@@ -148,18 +111,12 @@
 
     <script src="~/Scripts/moment.min.js"></script>
     <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/data.js"></script>
-    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
     <script src="~/Scripts/jquery.autocomplete.min.js"></script>
-
     <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
-
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
     <script type="text/javascript">
-
 
         $(function () {
             showingtimelist();
@@ -168,15 +125,11 @@
 
         function showingtimelist() {
             var SetData = $("#showingtime tbody").empty();
-
             if ($.fn.dataTable.isDataTable('#showingtime')) {
-
                 $('#showingtime').DataTable().clear().destroy();
-
             }
 
             $('#showingtime').DataTable({
-
                 "ajax": {
                     "url": "/Showingtime/ShowingTimeList",
                     "type": "GET",
@@ -193,37 +146,24 @@
                             }
                             return moment(data).format("MM/DD/YYYY HH:mm");
                         }
-                    },
-                    
-
+                    },                
                     { className: "hide", data: 'showid' },
                     {
-
                         "mRender": function (data, type, row) {
                             return '<a href="#" class="editor_remove" onclick="EditShowingTime(' + row.showid + ')">Edit</a>'
-
-
-
                         }
                     }, {
-
                         "mRender": function (data, type, row) {
                             return '<a href="#" class="editor_remove" onclick="DeleteShowingTime(' + row.showid + ')">Delete</a>'
-
-
                         }
                     }
-
                 ]
-
             });
-
-
         }
 
+
         function EditShowingTime(showid) {
-            //alert(showid);
-            
+            //alert(showid);     
             $.ajax({
                 cache: false,
                 url: '@Url.Action("EditShowingTime","Showingtime")',
@@ -250,6 +190,7 @@
                 }
             });
         }
+
         function getmoviename() {
             $.ajax({
                 cache: false,
@@ -283,13 +224,9 @@
                         complete: function () {
 
                         }
-
                     });
-
             },
                 complete: function () {
-
-
 
                 }
 
